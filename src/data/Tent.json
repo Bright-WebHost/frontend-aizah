@@ -1,0 +1,194 @@
+[
+    {
+        "id": "1",
+        "category": "cabin",
+        "continents": "africa",
+        "country": "namibia",
+        "name": "Chic 1 BHK In Downtown Dubai Near To Metro Station",
+        "image": "/images/tent/900x900.png",
+        "location": "dubai",
+        "locationMap": {
+            "lat": 22.31,
+            "lng": 52.11
+        },
+        "rate": 4.6,
+        "price": 200,
+        "listImage": [
+            "/images/allimg/rooms/1.png",
+            "/images/allimg/rooms/2.png",
+            "/images/allimg/rooms/3.png",
+            "/images/allimg/rooms/4.png",
+            "/images/allimg/rooms/5.png",
+            "/images/allimg/rooms/6.png"
+        ],
+        "shortDesc": "This charming retreat is designed for families seeking a warm and intimate space, this place is perfect for creating cherished moments.",
+        "description": "As you step inside, you'll be greeted by a homely ambiance with tastefully decorated interiors. The homestay features a comfortable living area where the family can gather for quality time. The bedrooms are thoughtfully designed to provide a relaxing retreat, ensuring a good night's sleep for both parents and children. Our homestay is equipped with family-friendly amenities, including a fully functional kitchen where you can prepare and enjoy home-cooked meals together. Additionally, a cozy dining area allows your family to share memorable moments over delicious food.",
+        "services": [
+            "reception desk",
+            "tour guide",
+            "pet allowed",
+            "breakfast",
+            "self-service laundry",
+            "cooking service",
+            "relaxation service",
+            "cleaning service"
+        ],
+        "amenities": [
+            "parking",
+            "toilet",
+            "campfire",
+            "wifi",
+            "picnic table",
+            "trash",
+            "cooking equipment",
+            "coffee maker"
+        ],
+        "activities": [
+            "hiking",
+            "swimming",
+            "fishing",
+            "biking",
+            "boating",
+            "climbing"
+        ],
+        "terrain": [
+            "lake",
+            "beach",
+            "farm",
+            "forest",
+            "river",
+            "cave"
+        ]
+    },
+    {
+        "id": "2",
+        "category": "tented cabins",
+        "continents": "asia",
+        "country": "vietnam",
+        "name": "Refined luxury in business bay/walk - Dubai mall",
+        "image": "/images/tent/900x900.png",
+        "location": "dubai",
+        "locationMap": {
+            "lat": 23.31,
+            "lng": 47.11
+        },
+        "rate": 4.8,
+        "price": 200,
+        "listImage": [
+            "/images/allimg/rooms/2.png",
+            "/images/allimg/rooms/4.png",
+            "/images/allimg/rooms/1.png",
+            "/images/allimg/rooms/3.png",
+            "/images/allimg/rooms/5.png"
+        ],
+        "shortDesc": "This charming retreat is designed for families seeking a warm and intimate space, this place is perfect for creating cherished moments.",
+        "description": "As you step inside, you'll be greeted by a homely ambiance with tastefully decorated interiors. The homestay features a comfortable living area where the family can gather for quality time. The bedrooms are thoughtfully designed to provide a relaxing retreat, ensuring a good night's sleep for both parents and children. Our homestay is equipped with family-friendly amenities, including a fully functional kitchen where you can prepare and enjoy home-cooked meals together. Additionally, a cozy dining area allows your family to share memorable moments over delicious food.",
+        "services": [
+            "reception desk",
+            "pet allowed",
+            "breakfast",
+            "currency exchange",
+            "self-service laundry",
+            "cooking service",
+            "relaxation service",
+            "cleaning service"
+        ],
+        "amenities": [
+            "parking",
+            "toilet",
+            "campfire",
+            "wifi",
+            "tv",
+            "bathtub",
+            "picnic table",
+            "trash",
+            "cooking equipment",
+            "refrigerator",
+            "microwave"
+        ],
+        "activities": [
+            "hiking",
+            "fishing",
+            "swimming",
+            "wildlife watching",
+            "biking",
+            "boating",
+            "climbing",
+            "surfing",
+            "wind sports"
+        ],
+        "terrain": [
+            "lake",
+            "farm",
+            "moutain",
+            "forest",
+            "river",
+            "hot spring",
+            "swimming hole",
+            "desert",
+            "cave"
+        ]
+    },
+    {
+        "id": "3",
+        "category": "safari tents",
+        "continents": "europe",
+        "country": "greece",
+        "name": "Chic studio+metroaccess/downtown",
+        "image": "/images/tent/900x900.png",
+        "location": "dubai",
+        "locationMap": {
+            "lat": 20.31,
+            "lng": 49.11
+        },
+        "rate": 4.8,
+        "price": 200,
+        "listImage": [
+            "/images/allimg/demo/1.png",
+            "/images/allimg/demo/2.png",
+            "/images/allimg/demo/3.png",
+            "/images/allimg/demo/4.png",
+            "/images/allimg/demo/5.png"
+        ],
+        "shortDesc": "This charming retreat is designed for families seeking a warm and intimate space, this place is perfect for creating cherished moments.",
+        "description": "As you step inside, you'll be greeted by a homely ambiance with tastefully decorated interiors. The homestay features a comfortable living area where the family can gather for quality time. The bedrooms are thoughtfully designed to provide a relaxing retreat, ensuring a good night's sleep for both parents and children. Our homestay is equipped with family-friendly amenities, including a fully functional kitchen where you can prepare and enjoy home-cooked meals together. Additionally, a cozy dining area allows your family to share memorable moments over delicious food.",
+        "services": [
+            "pet allowed",
+            "breakfast",
+            "currency exchange",
+            "self-service laundry",
+            "cooking service",
+            "relaxation service",
+            "cleaning service"
+        ],
+        "amenities": [
+            "parking",
+            "toilet",
+            "campfire",
+            "wifi",
+            "tv",
+            "bathtub",
+            "trash",
+            "cooking equipment"
+        ],
+        "activities": [
+            "hiking",
+            "swimming",
+            "biking",
+            "boating",
+            "climbing",
+            "surfing",
+            "wind sports"
+        ],
+        "terrain": [
+            "beach",
+            "forest",
+            "river",
+            "hot spring",
+            "swimming hole",
+            "desert",
+            "cave",
+            "farm"
+        ]
+    }
+]
