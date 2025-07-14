@@ -76,7 +76,7 @@ const Chic1Book = () => {
     useEffect(() => {
         const fetchPriceData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/6853d4b14f532831999a179c`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/68748a768ed78816e370028d`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch price data');
                 }
