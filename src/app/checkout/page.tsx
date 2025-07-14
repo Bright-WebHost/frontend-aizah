@@ -61,7 +61,7 @@ const Checkout = () => {
   useEffect(() => {
     const fetchApiKey = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}api/keyview`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/keyview`);
         const keyData = response.data?.data?.[0];
         if (keyData) {
           setApiKey(keyData.key);
