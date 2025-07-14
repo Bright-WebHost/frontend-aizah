@@ -169,18 +169,18 @@ const Chic1Book = () => {
         
         const month = getMonth(date);
         switch (month) {
-            case 0: return priceData?.jan;
-            case 1: return priceData?.feb;
-            case 2: return priceData?.mar;
-            case 3: return priceData?.apr;
-            case 4: return priceData?.may;
-            case 5: return priceData?.jun;
-            case 6: return priceData?.jul;
-            case 7: return priceData?.aug;
-            case 8: return priceData?.sep;
-            case 9: return priceData?.oct;
-            case 10: return priceData?.nov;
-            case 11: return priceData?.dec;
+            case 0: return priceData.jan;
+            case 1: return priceData.feb;
+            case 2: return priceData.mar;
+            case 3: return priceData.apr;
+            case 4: return priceData.may;
+            case 5: return priceData.jun;
+            case 6: return priceData.jul;
+            case 7: return priceData.aug;
+            case 8: return priceData.sep;
+            case 9: return priceData.oct;
+            case 10: return priceData.nov;
+            case 11: return priceData.dec;
             default: return 200;
         }
     };
