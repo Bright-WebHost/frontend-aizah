@@ -76,7 +76,7 @@ const DubaiMallBook = () => {
     useEffect(() => {
         const fetchPriceData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/6853d4e3e6ad1fa702b7870a`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/6874aa0e299ea6a2e7805423`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch price data');
                 }

@@ -76,7 +76,7 @@ const RevaBook = () => {
     useEffect(() => {
         const fetchPriceData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/6842bcff440f00f8d71ed027`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/6874abe0299ea6a2e7805553`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch price data');
                 }
