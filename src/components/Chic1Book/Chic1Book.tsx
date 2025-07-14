@@ -73,29 +73,37 @@ const Chic1Book = () => {
     });
 
     // Fetch price data from backend
-    useEffect(() => {
-        const fetchPriceData = async () => {
-            try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/68748a768ed78816e370028d`);
-                if (!response.ok) {
-                    throw new Error('Failed to fetch price data');
-                }
-
-                const data = await response.json();
-                setPriceData(data.prices);
-                setLoading(false);
-            } catch (err) {
-                setError(err instanceof Error ? err.message : 'An unknown error occurred');
-                setLoading(false);
+   useEffect(() => {
+    const fetchPriceData = async () => {
+        try {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/68748a768ed78816e370028d`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch price data');
             }
-        };
 
+            const data = await response.json();
+            console.log("Fetched priceView data:", data);
+
+            if (data && data.prices) {
+                setPriceData(data.prices);
+            } else {
+                throw new Error('Price data missing');
+            }
+
+            setLoading(false);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'An unknown error occurred');
+            setLoading(false);
+        }
+    };
+
+    fetchPriceData();
+    const interval = setInterval(() => {
         fetchPriceData();
-        const interval = setInterval(() => {
-            fetchPriceData();
-        }, 5000);
-        return () => clearInterval(interval);
-    }, []);
+    }, 5000);
+    return () => clearInterval(interval);
+}, []);
+
 
     // Fetch booked dates from backend
     const fetchBookedDates = useCallback(async () => {
