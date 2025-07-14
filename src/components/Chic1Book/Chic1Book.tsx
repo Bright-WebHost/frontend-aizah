@@ -80,6 +80,7 @@ const Chic1Book = () => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch price data');
                 }
+                
                 const data = await response.json();
                 setPriceData(data.prices);
                 setLoading(false);
