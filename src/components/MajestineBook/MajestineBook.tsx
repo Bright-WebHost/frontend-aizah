@@ -76,7 +76,7 @@ const MajestineBook = () => {
     useEffect(() => {
         const fetchPriceData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/priceView/6874c925959d810df54543ab`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/6874c925959d810df54543ab`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch price data');
                 }
