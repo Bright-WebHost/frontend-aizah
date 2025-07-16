@@ -12,7 +12,7 @@ const Contact = () => {
     return (
         <>
             <HeaderOne />
-            <Breadcrumb img='/images/breadcrumb/1920x320.png' heading='Contact Us' subHeading='Reach Out to GlampHub. Your Gateway to Outdoor Luxury.' />
+            <Breadcrumb img='/images/allimg/banners.webp' heading='Contact Us' subHeading='' />
             <div className='contact-us lg:pt-20 md:pt-14 pt-10'>
                 <div className="container">
                     <div className="flex justify-between max-lg:flex-col gap-y-10">

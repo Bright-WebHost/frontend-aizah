@@ -75,14 +75,14 @@ const About = () => {
                             </div>
                             <div className="flex items-center justify-between mt-5">
                                 <div>
-                                    <div className="heading5">John Smith</div>
-                                    <div className="caption1 text-variant1 mt-1">Graphic Designer</div>
+                                    <div className="heading5">Person 1</div>
+                                    {/* <div className="caption1 text-variant1 mt-1">Graphic Designer</div> */}
                                 </div>
-                                <Link href={'https://www.twitter.com/'} target='_blank'
-                                    className='bg-surface duration-300 hover:bg-primary hover:text-white w-12 h-12 rounded-full flex items-center justify-center'
+                                {/* <Link href={'https://www.twitter.com/'} target='_blank'
+                                    className='bg-surface duration-300 hover:bg-[#F1DD38] hover:text-white w-12 h-12 rounded-full flex items-center justify-center'
                                 >
                                     <span className='icon-twitter text-lg'></span>
-                                </Link>
+                                </Link> */}
                             </div>
                         </div>
                         <div className="item">
@@ -98,14 +98,14 @@ const About = () => {
                             </div>
                             <div className="flex items-center justify-between mt-5">
                                 <div>
-                                    <div className="heading5">Chris Patt</div>
-                                    <div className="caption1 text-variant1 mt-1">CEO - DigiNova</div>
+                                    <div className="heading5">Person 2</div>
+                                    {/* <div className="caption1 text-variant1 mt-1">CEO - DigiNova</div> */}
                                 </div>
-                                <Link href={'https://www.twitter.com/'} target='_blank'
-                                    className='bg-surface duration-300 hover:bg-primary hover:text-white w-12 h-12 rounded-full flex items-center justify-center'
+                                {/* <Link href={'https://www.twitter.com/'} target='_blank'
+                                    className='bg-surface duration-300 hover:bg-[#F1DD38] hover:text-white w-12 h-12 rounded-full flex items-center justify-center'
                                 >
                                     <span className='icon-twitter text-lg'></span>
-                                </Link>
+                                </Link> */}
                             </div>
                         </div>
                         <div className="item">
@@ -121,14 +121,14 @@ const About = () => {
                             </div>
                             <div className="flex items-center justify-between mt-5">
                                 <div>
-                                    <div className="heading5">Jack halow</div>
-                                    <div className="caption1 text-variant1 mt-1">Photographer</div>
+                                    <div className="heading5">Person 3</div>
+                                    {/* <div className="caption1 text-variant1 mt-1">Photographer</div> */}
                                 </div>
-                                <Link href={'https://www.twitter.com/'} target='_blank'
-                                    className='bg-surface duration-300 hover:bg-primary hover:text-white w-12 h-12 rounded-full flex items-center justify-center'
+                                {/* <Link href={'https://www.twitter.com/'} target='_blank'
+                                    className='bg-surface duration-300 hover:bg-[#F1DD38] hover:text-white w-12 h-12 rounded-full flex items-center justify-center'
                                 >
                                     <span className='icon-twitter text-lg'></span>
-                                </Link>
+                                </Link> */}
                             </div>
                         </div>
                     </div>
