@@ -269,70 +269,64 @@ const ChicStudioBook = () => {
         }
     };
 
-   const handleBookNow = async () => {
-    let currentDate = new Date(state[0].startDate);
-    const endDate = new Date(state[0].endDate);
-    let hasBookedDates = false;
-
-    while (currentDate < endDate) {
-        if (isDateBooked(currentDate)) {
-            hasBookedDates = true;
-            break;
+    const handleBookNow = async () => {
+        let currentDate = new Date(state[0].startDate);
+        const endDate = new Date(state[0].endDate);
+        let hasBookedDates = false;
+        
+        while (currentDate < endDate) {
+            if (isDateBooked(currentDate)) {
+                hasBookedDates = true;
+                break;
+            }
+            currentDate = addDays(currentDate, 1);
         }
-        currentDate = addDays(currentDate, 1);
-    }
-
-    if (hasBookedDates) {
-        alert('These dates have just been booked. Please choose different dates.');
-        await fetchBookedDates();
-        return;
-    }
-
-    const startDate = state[0].startDate.toISOString();
-    const endDateStr = state[0].endDate.toISOString();
-    const guests = guest.adult;
-    const children = guest.children;
-    const price = nightlyRate;
-    const totalPrice = totalBeforeTaxes;
-     const roomname = "Chic studio";
-
-    try {
-        // ❌ Disable actual API call
-        // const response = await fetch('http://localhost:7000/api/checkout', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({
-        //         roomname,
-        //         checkin: startDate,
-        //         checkout: endDateStr,
-        //         guests,
-        //         children,
-        //         price,
-        //         totalPrice
-        //     })
-        // });
-
-        // ✅ Fake successful response
-        const response = { ok: true }; // simulate successful booking
-
-        if (!response.ok) {
-            throw new Error('Booking failed');
+        
+        if (hasBookedDates) {
+            alert('These dates have just been booked. Please choose different dates.');
+            await fetchBookedDates();
+            return;
         }
 
-        await fetchBookedDates();
+        const startDate = state[0].startDate.toISOString();
+        const endDateStr = state[0].endDate.toISOString();
+        const guests = guest.adult;
+        const children = guest.children;
+        const price = nightlyRate;
+        const totalPrice = totalBeforeTaxes;
+        const roomname = "Chic studio";
+      
+        try {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/checkout`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    roomname,
+                    checkin: startDate,
+                    checkout: endDateStr,
+                    guests,
+                    children,
+                    price,
+                    totalPrice
+                })
+            });
 
-        router.push(
-            `/checkout?roomname=${roomname}&startDate=${startDate}&endDate=${endDateStr}&guests=${guests}&children=${children}&price=${price}&totalPrice=${totalPrice}`
-        );
-    } catch (error) {
-        console.error('Booking error:', error);
-        alert('Booking failed. Please try again.');
-    }
-};
+            if (!response.ok) {
+                throw new Error('Booking failed');
+            }
 
-
+            await fetchBookedDates();
+            
+            router.push(
+                `/checkout?roomname=${roomname}&startDate=${startDate}&endDate=${endDateStr}&guests=${guests}&children=${children}&price=${price}&totalPrice=${totalPrice}`
+            );
+        } catch (error) {
+            console.error('Booking error:', error);
+            alert('Booking failed. Please try again.');
+        }
+    };
 
     if (loading) {
         return <div>Loading price information...</div>;
