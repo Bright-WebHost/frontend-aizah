@@ -16,7 +16,7 @@ const LocationOne = () => {
             <div className="location-block lg:pt-20 md:pt-14 pt-10">
                 <div className="container">
                     <TextHeading title='Popular homes in Dubai' subTitle='' />
-                    <div className="list-location grid lg:grid-cols-3 min-[370px]:grid-cols-2 md:gap-[30px] gap-y-7 gap-4 md:mt-10 mt-6">
+                    <div className="list-location grid lg:grid-cols-3 min-[370px]:grid-cols-1 md:gap-[30px] gap-y-7 gap-4 md:mt-10 mt-6">
                         <div
                             className="item hover-scale"
                             // onClick={() => handleClickContinents('Africa')}

@@ -328,6 +328,8 @@ const DemoBook = () => {
         }
     };
 
+    
+
     if (loading) {
         return <div>Loading price information...</div>;
     }

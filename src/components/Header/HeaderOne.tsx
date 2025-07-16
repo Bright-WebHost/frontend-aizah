@@ -224,8 +224,16 @@ const HeaderOne = () => {
                                     About us
                                 </Link>
                             </li>
-
                             <li className='h-full relative'>
+                                <Link
+                                    href="/about"
+                                    className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 ${pathname === '/Room' ? 'active' : ''}`}
+                                >
+                                    Room
+                                </Link>
+                            </li>
+
+                            {/* <li className='h-full relative'>
                                 <Link
                                     href="#!"
                                     className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 ${pathname === '/' || pathname.includes('/homepages/') ? 'active' : ''}`}
@@ -247,7 +255,7 @@ const HeaderOne = () => {
                                      
                                     </ul>
                                 </div>
-                            </li>
+                            </li> */}
 
 
 

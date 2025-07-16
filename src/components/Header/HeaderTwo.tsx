@@ -51,7 +51,7 @@ const HeaderTwo = () => {
 {/* this call old */}
                             <div  id="header" className='header '>
                 <div className={`header-main h-20 w-full bg-white px-4 min-[1322px]:px-10 flex items-center justify-between ` }>
-                    <Link href={'#'} className="logo">
+                    <Link href={'/'} className="logo">
                         <Image
                             src={'/images/allimg/logo/logo.jpg'}
                             width={200}
@@ -224,8 +224,16 @@ const HeaderTwo = () => {
                                     About us
                                 </Link>
                             </li>
-
                             <li className='h-full relative'>
+                                <Link
+                                    href="/room"
+                                    className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 ${pathname === '/room' ? 'active' : ''}`}
+                                >
+                                   Rooms
+                                </Link>
+                            </li>
+
+                            {/* <li className='h-full relative'>
                                 <Link
                                     href="#!"
                                     className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 ${pathname === '/' || pathname.includes('/homepages/') ? 'active' : ''}`}
@@ -247,7 +255,7 @@ const HeaderTwo = () => {
                                      
                                     </ul>
                                 </div>
-                            </li>
+                            </li> */}
 
 
 

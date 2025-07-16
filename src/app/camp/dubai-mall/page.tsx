@@ -219,80 +219,6 @@ const TentDetail = () => {
 
 
 
-                           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            
-
-
-                            
-
-
-                            
-
-
-
-
-
-
-
-
-
-                          
-                            {/* <div className="grid grid-cols-4 grid-rows-4 gap-2 hidden md:grid " style={{marginLeft:'20px',marginRight:'20px',height:'340px'}}>
-  <div className="col-span-2 row-span-4">
-    <img src="/images/allimg/rooms/1.png" alt="Image 1" className="w-full h-full object-cover "  style={{borderTopLeftRadius:'20px',borderBottomLeftRadius:'20px'}}/>
-  </div>
-  <div className="row-span-2 col-start-3">
-    <img src="/images/allimg/rooms/2.png" alt="Image 2" className="w-full h-full object-cover " />
-  </div>
-  <div className="row-span-2 col-start-4">
-    <img src="/images/allimg/rooms/3.png" alt="Image 3" className="w-full h-full object-cover " style={{borderTopRightRadius:'20px'}}/>
-  </div>
-  <div className="row-span-2 col-start-3 row-start-3">
-    <img src="/images/allimg/rooms/4.png" alt="Image 4" className="w-full h-full object-cover " />
-  </div>
-  <div className="row-span-2 col-start-4 row-start-3">
-    <img src="/images/allimg/rooms/5.png" alt="Image 5" className="w-full h-full object-cover" style={{borderBottomRightRadius:'20px'}}/>
-  </div>
-</div> */}
-
-
-
-
 <div className="content-detail pt-2 w-full ">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col-reverse lg:flex-row gap-y-10 justify-between w-full">
@@ -409,6 +335,127 @@ const TentDetail = () => {
         </div>
       </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* Mobile screen */}
+<div className="md:hidden flex overflow-x-auto gap-4 px-2">
+  {images.map((image, index) => (
+    <div
+      key={index}
+      className="min-w-[100%] max-w-[100%] flex-shrink-0"
+      onClick={() => setCurrentIndex(index)} // ← this line triggers modal
+    >
+      <img
+        src={image.src}
+        alt={image.alt}
+        className="w-full h-60 object-cover rounded-lg cursor-pointer"
+      />
+    </div>
+  ))}
+</div>
+
+
+<div className="md:hidden flex justify-end -mt-[40px] mr-[10px]  ">
+  <div className="inline-block bg-white border border-g ray-300 rounded-[10px] px-3 py-1">
+    <button className="flex items-center gap-2 text-[#32548e] text-[12px]"   onClick={() => setCurrentIndex(0)}>
+      <span className="fi fi-rr-grip-dots text-[18px]"></span>
+      Show all photos
+    </button>
+  </div>
+</div>
+{/* Mobile screen */}
+
+
+
+
+                           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+
+
+                            
+
+
+                            
+
+
+
+
+
+
+
+
+
+                          
+                            {/* <div className="grid grid-cols-4 grid-rows-4 gap-2 hidden md:grid " style={{marginLeft:'20px',marginRight:'20px',height:'340px'}}>
+  <div className="col-span-2 row-span-4">
+    <img src="/images/allimg/rooms/1.png" alt="Image 1" className="w-full h-full object-cover "  style={{borderTopLeftRadius:'20px',borderBottomLeftRadius:'20px'}}/>
+  </div>
+  <div className="row-span-2 col-start-3">
+    <img src="/images/allimg/rooms/2.png" alt="Image 2" className="w-full h-full object-cover " />
+  </div>
+  <div className="row-span-2 col-start-4">
+    <img src="/images/allimg/rooms/3.png" alt="Image 3" className="w-full h-full object-cover " style={{borderTopRightRadius:'20px'}}/>
+  </div>
+  <div className="row-span-2 col-start-3 row-start-3">
+    <img src="/images/allimg/rooms/4.png" alt="Image 4" className="w-full h-full object-cover " />
+  </div>
+  <div className="row-span-2 col-start-4 row-start-3">
+    <img src="/images/allimg/rooms/5.png" alt="Image 5" className="w-full h-full object-cover" style={{borderBottomRightRadius:'20px'}}/>
+  </div>
+</div> */}
+
+
+
+
 
 
 

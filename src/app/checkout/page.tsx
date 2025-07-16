@@ -1,21 +1,23 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { format, differenceInDays } from 'date-fns';
 import HeaderOne from '@/components/Header/HeaderOne';
 import Footer from '@/components/Footer/Footer';
 import axios from 'axios';
-import Link from 'next/link'
-// import { useRouter } from 'next/navigation';
+import { FaDownload, FaCheckCircle, FaTimes } from 'react-icons/fa';
 
 const Checkout = () => {
+  const router = useRouter();
   const [paymentID, setPaymentID] = useState('');
   const [paymentMethod, setPaymentMethod] = useState<'card' | 'cod'>('card');
   const [showPopup, setShowPopup] = useState(false);
   const [loading, setLoading] = useState(false);
   const [apiKey, setApiKey] = useState("");
   const [keyId, setKeyId] = useState("");
+  const [bookingSuccess, setBookingSuccess] = useState(false);
+  const [bookingDetails, setBookingDetails] = useState<any>(null);
 
   const [billingData, setBillingData] = useState({
     firstName: '',
@@ -46,7 +48,6 @@ const Checkout = () => {
     ? differenceInDays(new Date(endDate), new Date(startDate))
     : 1;
 
-  // Load Razorpay script
   const loadRazorpayScript = () => {
     return new Promise((resolve) => {
       const script = document.createElement('script');
@@ -57,11 +58,10 @@ const Checkout = () => {
     });
   };
 
-  // Fetch Razorpay API key
   useEffect(() => {
     const fetchApiKey = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/keyview`);
+        const response = await axios.get("http://localhost:7000/api/keyview");
         const keyData = response.data?.data?.[0];
         if (keyData) {
           setApiKey(keyData.key);
@@ -75,7 +75,6 @@ const Checkout = () => {
     fetchApiKey();
   }, []);
 
-  // Send booking data to backend for card payments
   const sendBookingToBackend = async (paymentId?: string) => {
     const payload = {
       fname: billingData.firstName,
@@ -92,7 +91,7 @@ const Checkout = () => {
       totalprice: totalPrice,
       night: totalNights,
       price: price,
-      roomname:roomname,
+      roomname: roomname,
       booking: {
         startDate,
         endDate,
@@ -108,13 +107,16 @@ const Checkout = () => {
     };
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/checkout`, {
+      const res = await fetch('http://localhost:7000/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
       
       if (!res.ok) throw new Error('Failed to send booking data');
+      
+      const data = await res.json();
+      setBookingDetails(data.data);
       return true;
     } catch (error) {
       console.error('Error sending booking:', error);
@@ -122,7 +124,6 @@ const Checkout = () => {
     }
   };
 
-  // Send COD booking data to the new endpoint
   const sendCODBookingToBackend = async () => {
     const payload = {
       fname: billingData.firstName,
@@ -139,7 +140,7 @@ const Checkout = () => {
       totalprice: totalPrice,
       night: totalNights,
       price: price,
-      roomname:roomname,
+      roomname: roomname,
       booking: {
         startDate,
         endDate,
@@ -155,13 +156,16 @@ const Checkout = () => {
     };
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/checkoutSubmit`, {
+      const res = await fetch('http://localhost:7000/api/checkoutSubmit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
       
       if (!res.ok) throw new Error('Failed to submit COD booking');
+      
+      const data = await res.json();
+      setBookingDetails(data.data);
       return true;
     } catch (error) {
       console.error('Error submitting COD booking:', error);
@@ -169,7 +173,6 @@ const Checkout = () => {
     }
   };
 
-  // Handle Razorpay payment
   const handleRazorpayPayment = async () => {
     if (!billingData.firstName || !billingData.email || !billingData.phone) {
       alert('Please fill at least First Name, Email, and Phone fields.');
@@ -201,7 +204,7 @@ const Checkout = () => {
           const success = await sendBookingToBackend(paymentID);
           
           if (success) {
-            alert(`Payment successful! Payment ID: ${paymentID}`);
+            setBookingSuccess(true);
             setShowPopup(true);
           } else {
             alert('Payment succeeded but failed to save booking. Please contact support.');
@@ -233,7 +236,6 @@ const Checkout = () => {
     rzp.open();
   };
 
-  // Handle COD submission
   const handleSubmitCOD = async () => {
     if (!billingData.firstName || !billingData.email || !billingData.phone) {
       alert('Please fill at least First Name, Email, and Phone fields.');
@@ -244,8 +246,8 @@ const Checkout = () => {
     try {
       const success = await sendCODBookingToBackend();
       if (success) {
-        alert('COD booking submitted successfully!');
-        // You can add additional success handling here if needed
+        setBookingSuccess(true);
+        setShowPopup(true);
       } else {
         alert('Failed to submit COD booking. Please try again.');
       }
@@ -256,23 +258,100 @@ const Checkout = () => {
       setLoading(false);
     }
   };
-  //  const router = useRouter();
+
+  const downloadBookingDetails = async () => {
+    try {
+      // Use bookingDetails if available, otherwise use form data
+      const receiptData = bookingDetails || {
+        fname: billingData.firstName,
+        lname: billingData.lastName,
+        email: billingData.email,
+        phone: billingData.phone,
+        checkin: formattedStartDate,
+        checkout: formattedEndDate,
+        guests: guests,
+        night: totalNights,
+        totalprice: totalPrice,
+        price: price,
+        roomname: roomname,
+        paymentID: paymentMethod === 'card' ? paymentID : 'COD'
+      };
+
+      // Dynamically import jsPDF
+      const { jsPDF } = await import('jspdf');
+      
+      const doc = new jsPDF();
+      
+      // Add header
+      doc.setFontSize(24);
+      doc.setTextColor(40, 53, 147);
+      doc.text('AIZAH HOSPITALITY', 105, 20, { align: 'center' });
+      doc.setFontSize(18);
+      doc.text('BOOKING RECEIPT', 105, 30, { align: 'center' });
+      
+      // Add line separator
+      doc.setDrawColor(200, 200, 200);
+      doc.line(20, 40, 190, 40);
+      
+      // Guest Information
+      doc.setFontSize(14);
+      doc.setTextColor(40, 53, 147);
+      doc.text('Guest Information:', 20, 50);
+      doc.setFontSize(12);
+      doc.setTextColor(0, 0, 0);
+      doc.text(`Name: ${receiptData.fname} ${receiptData.lname}`, 20, 60);
+      doc.text(`Email: ${receiptData.email}`, 20, 70);
+      doc.text(`Phone: ${receiptData.phone}`, 20, 80);
+      doc.text(`Address: ${billingData.streetAddress}, ${billingData.city}, ${billingData.zipCode}`, 20, 90);
+      
+      // Booking Details
+      doc.setFontSize(14);
+      doc.setTextColor(40, 53, 147);
+      doc.text('Booking Details:', 20, 110);
+      doc.setFontSize(12);
+      doc.setTextColor(0, 0, 0);
+      doc.text(`Room: ${receiptData.roomname}`, 20, 120);
+      doc.text(`Check-in: ${receiptData.checkin}`, 20, 130);
+      doc.text(`Check-out: ${receiptData.checkout}`, 20, 140);
+      doc.text(`Nights: ${receiptData.night}`, 20, 150);
+      doc.text(`Guests: ${receiptData.guests} (Adults: ${adults || '0'}, Children: ${children || '0'})`, 20, 160);
+      
+      // Payment Information
+      doc.setFontSize(14);
+      doc.setTextColor(40, 53, 147);
+      doc.text('Payment Information:', 20, 180);
+      doc.setFontSize(12);
+      doc.setTextColor(0, 0, 0);
+      doc.text(`Payment Method: ${paymentMethod === 'card' ? 'Payment Sucess' : 'Pay at Site'}`, 20, 190);
+      if (paymentMethod === 'card') {
+        doc.text(`Payment ID: ${receiptData.paymentID}`, 20, 200);
+      }
+      doc.text(`Total Amount: ₹${receiptData.totalprice}`, 20, 210);
+      
+      // Footer
+      doc.setFontSize(12);
+      doc.setTextColor(102, 102, 102);
+      doc.text('Thank you for your booking!', 105, 250, { align: 'center' });
+      
+      // Save the PDF
+      doc.save(`AizahBooking_${receiptData.fname}_${receiptData.checkin}.pdf`);
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Failed to generate receipt. Please try again.');
+    }
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+    router.push('/');
+  };
+
   return (
     <>
       <HeaderOne />
-{/*        
-       <div className="button-main text-center mt-5 ml-16">
-      <button
-        type="button"
-        onClick={() => router.back()}
-        className="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600"
-      >
-        Go Back
-      </button>
-    </div> */}
       <div>
         <div className="max-w-12xl mx-auto px-4 py-10 flex flex-col items-center lg:items-start lg:flex-row gap-8 lg:ml-10 lg:mr-10">
-          {/* Left Section */}
+          {/* Billing Address Form */}
           <div
             className="w-full flex-1 bg-white shadow-md p-6 rounded-2xl"
             style={{
@@ -281,7 +360,6 @@ const Checkout = () => {
               borderRadius: '20px',
             }}
           >
-            {/* Billing Address */}
             <div className="content-detail border-b border-outline pt-0">
               <div className="container">
                 <div className="flex max-lg:flex-col-reverse gap-y-10 justify-between">
@@ -362,7 +440,6 @@ const Checkout = () => {
               </div>
             </div>
 
-            {/* Payment Options */}
             <div className="pt-4">
               <h2 className="font-semibold text-lg mb-4">Payment Options</h2>
               <div className="flex gap-6 mb-6">
@@ -406,7 +483,7 @@ const Checkout = () => {
             </div>
           </div>
 
-          {/* Right Section - Booking Summary */}
+          {/* Booking Summary */}
           <div
             className="lg:w-[32%] w-full max-lg:w-full max-lg:mr-4 rounded-2xl shadow-md bg-white px-6 py-10"
             style={{
@@ -417,7 +494,7 @@ const Checkout = () => {
             <div>
               <h3 className="font-semibold text-xl mb-6">Summary</h3>
               <div className="flex justify-between mb-4">
-                <p className="font-semibold">Check In</p>
+                <p className="font-semibold">Room Type</p>
                 <p>{roomname}</p>
               </div>
               <div className="flex justify-between mb-4">
@@ -452,6 +529,59 @@ const Checkout = () => {
           </div>
         </div>
       </div>
+
+      {/* Success Popup */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-lg max-w-md w-full relative">
+            <button 
+              onClick={closePopup}
+              className="absolute top-4 right-4 text-gray-800 hover:text-black"
+            >
+              <FaTimes className="text-xl" />
+            </button>
+            
+            <div className="text-center">
+              <FaCheckCircle className="text-green-500 text-5xl mx-auto mb-4" />
+              <h2 className="text-2xl font-bold mb-2">
+                {bookingSuccess ? 'Booking Confirmed!' : 'Payment Successful!'}
+              </h2>
+              <p className="mb-6">
+                {paymentMethod === 'card'
+                  ? `Your payment of ₹${totalPrice} has been processed successfully.`
+                  : 'Your booking has been confirmed. Please pay at check-in.'}
+              </p>
+              
+              <div className="bg-gray-100 p-4 rounded mb-6 text-left">
+                <h3 className="font-semibold mb-2">Booking Details:</h3>
+                <p><span className="font-medium">Room:</span> {roomname}</p>
+                <p><span className="font-medium">Dates:</span> {formattedStartDate} to {formattedEndDate}</p>
+                <p><span className="font-medium">Guests:</span> {guests} (Adults: {adults || '0'}, Children: {children || '0'})</p>
+                {paymentMethod === 'card' && (
+                  <p><span className="font-medium">Payment ID:</span> {paymentID}</p>
+                )}
+              </div>
+
+              <div className="flex justify-center gap-4">
+                <button
+                 
+                  onClick={downloadBookingDetails}
+                  className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+                >
+                  <FaDownload /> <span style={{color:"black"}}>Download Receipt</span>
+                </button>
+                <button
+                  onClick={closePopup}
+                  className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Footer />
     </>
   );

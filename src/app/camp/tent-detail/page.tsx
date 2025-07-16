@@ -443,6 +443,8 @@ const TentDetail = () => {
     </div>
   ))}
 </div>
+
+
 <div className="md:hidden flex justify-end -mt-[40px] mr-[10px]  ">
   <div className="inline-block bg-white border border-g ray-300 rounded-[10px] px-3 py-1">
     <button className="flex items-center gap-2 text-[#32548e] text-[12px]"   onClick={() => setCurrentIndex(0)}>
