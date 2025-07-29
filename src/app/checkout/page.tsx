@@ -67,7 +67,7 @@ const Checkout = () => {
   useEffect(() => {
     const fetchApiKey = async () => {
       try {
-        const response = await axios.get(`http://localhost:7000/api/keyview`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/keyview`);
         const keyData = response.data?.data?.[0];
         if (keyData) {
           setApiKey(keyData.key);
@@ -114,7 +114,7 @@ const Checkout = () => {
     };
 
     try {
-      const res = await fetch(`http://localhost:7000/api/checkout`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/checkout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -164,7 +164,7 @@ const Checkout = () => {
     };
 
     try {
-      const res = await fetch(`http://localhost:7000/api/checkoutSubmit`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/checkoutSubmit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

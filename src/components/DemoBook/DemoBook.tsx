@@ -89,7 +89,7 @@ const DemoBook = () => {
     useEffect(() => {
         const fetchPriceData = async () => {
             try {
-                const response = await fetch(`http://localhost:7000/api/priceView/687dd603fcd5e0829434c99b`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/687dd603fcd5e0829434c99b`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch price data');
                 }
@@ -112,7 +112,7 @@ const DemoBook = () => {
     // Fetch booked dates from backend and filter for "merano" room only
     const fetchBookedDates = useCallback(async () => {
         try {
-            const response = await fetch(`http://localhost:7000/api/chekoutview`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/chekoutview`);
             if (!response.ok) {
                 throw new Error('Failed to fetch booked dates');
             }
