@@ -27,7 +27,7 @@ const room = () => {
         <br/>
         <CategoryOne />
         <RecommendOne data={tentData} start={10} end={18} />
-        <BecomeHost />
+        {/* <BecomeHost /> */}
         {/* <Amenities /> */}
         <Testimonial data={dataTestimonial} />
         {/* <News /> */}

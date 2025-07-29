@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { DateRangePicker } from 'react-date-range';
-import { addDays, differenceInDays, getMonth } from 'date-fns';
+import { addDays, differenceInDays, getMonth, isWithinInterval, parseISO } from 'date-fns';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import StickyBox from 'react-sticky-box';
@@ -16,19 +16,32 @@ interface GuestType {
     pet: number;
 }
 
+interface RangeData {
+    startDate: string;
+    endDate: string;
+    price: number;
+    _id: string;
+}
+
+interface MonthData {
+    basePrice: number;
+    ranges: RangeData[];
+    _id: string;
+}
+
 interface PriceData {
-    jan: number;
-    feb: number;
-    mar: number;
-    apr: number;
-    may: number;
-    jun: number;
-    jul: number;
-    aug: number;
-    sep: number;
-    oct: number;
-    nov: number;
-    dec: number;
+    jan: MonthData;
+    feb: MonthData;
+    mar: MonthData;
+    apr: MonthData;
+    may: MonthData;
+    jun: MonthData;
+    jul: MonthData;
+    aug: MonthData;
+    sep: MonthData;
+    oct: MonthData;
+    nov: MonthData;
+    dec: MonthData;
 }
 
 interface BookedDate {
@@ -76,7 +89,7 @@ const Merano29Book = () => {
     useEffect(() => {
         const fetchPriceData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/6874ac26299ea6a2e7805582`);
+                const response = await fetch(`http://localhost:7000/api/priceView/68874e21ae04001a449d20d5`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch price data');
                 }
@@ -90,22 +103,27 @@ const Merano29Book = () => {
         };
 
         fetchPriceData();
-        const interval = setInterval(() => {
+        const priceInterval = setInterval(() => {
             fetchPriceData();
         }, 5000);
-        return () => clearInterval(interval);
+        return () => clearInterval(priceInterval);
     }, []);
 
-    // Fetch booked dates from backend
+    // Fetch booked dates from backend and filter for "merano" room only
     const fetchBookedDates = useCallback(async () => {
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/chekoutview`);
+            const response = await fetch(`http://localhost:7000/api/chekoutview`);
             if (!response.ok) {
                 throw new Error('Failed to fetch booked dates');
             }
             const data = await response.json();
             if (data.data && Array.isArray(data.data)) {
-                const formattedDates = data.data.map((booking: BookingResponse) => ({
+                // Filter bookings for "merano" room only
+                const meranoBookings = data.data.filter((booking: BookingResponse) => 
+                    booking.roomname === "merano-2906"
+                );
+                
+                const formattedDates = meranoBookings.map((booking: BookingResponse) => ({
                     checkin: new Date(booking.checkin).toISOString(),
                     checkout: new Date(booking.checkout).toISOString()
                 }));
@@ -117,7 +135,16 @@ const Merano29Book = () => {
     }, []);
 
     useEffect(() => {
+        // Initial fetch
         fetchBookedDates();
+        
+        // Set up interval for periodic refresh (every 5 seconds)
+        const bookedDatesInterval = setInterval(() => {
+            fetchBookedDates();
+        }, 5000);
+        
+        // Clean up interval on component unmount
+        return () => clearInterval(bookedDatesInterval);
     }, [fetchBookedDates]);
 
     // Function to check if a date is booked
@@ -133,9 +160,45 @@ const Merano29Book = () => {
         });
     };
 
-    // Custom day content renderer for DateRangePicker
+    // Function to get price for specific date considering ALL custom ranges
+    const getPriceForDate = (date: Date): number => {
+        if (!priceData) return 200;
+        
+        // Create date-only object for comparison
+        const currentDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+        
+        // Check ALL months for any range that includes this date
+        const monthKeys = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+        
+        for (const monthKey of monthKeys) {
+            const monthData = priceData[monthKey as keyof PriceData];
+            
+            for (const range of monthData.ranges) {
+                const startDate = parseISO(range.startDate);
+                const endDate = parseISO(range.endDate);
+                
+                // Create date-only objects for comparison
+                const rangeStart = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+                const rangeEnd = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
+                
+                // Check if current date is within the range (inclusive)
+                if (currentDate >= rangeStart && currentDate <= rangeEnd) {
+                    return range.price;
+                }
+            }
+        }
+        
+        // If no custom range found, get the base price for the month
+        const month = getMonth(date);
+        const monthKey = monthKeys[month] as keyof PriceData;
+        return priceData[monthKey].basePrice;
+    };
+
+    // Custom day content renderer for DateRangePicker with price display
     const renderDayContent = (day: Date) => {
         const isBooked = isDateBooked(day);
+        const price = getPriceForDate(day);
+        
         return (
             <div 
                 style={{
@@ -145,55 +208,50 @@ const Merano29Book = () => {
                     width: '100%',
                     height: '100%',
                     display: 'flex',
+                    flexDirection: 'column',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    position: 'relative',
                 }}
             >
-                {day.getDate()}
+               
+                <div style={{ 
+                    fontSize: '14px', 
+                    fontWeight: 'bold',
+                    marginTop: '2px',
+                    color: isBooked ? '#DEE2E4' : 'inherit'
+                }}>
+                    {day.getDate()}
+                </div>
+                 <div style={{ fontSize: '8px' ,color:'red'}}>  {price} AED</div>
             </div>
         );
     };
 
-    // Get price for a specific month
-    const getPriceForMonth = (date: Date): number => {
-        if (!priceData) return 200;
-        
-        const month = getMonth(date);
-        switch (month) {
-            case 0: return priceData.jan;
-            case 1: return priceData.feb;
-            case 2: return priceData.mar;
-            case 3: return priceData.apr;
-            case 4: return priceData.may;
-            case 5: return priceData.jun;
-            case 6: return priceData.jul;
-            case 7: return priceData.aug;
-            case 8: return priceData.sep;
-            case 9: return priceData.oct;
-            case 10: return priceData.nov;
-            case 11: return priceData.dec;
-            default: return 200;
-        }
-    };
-
-    // Calculate total price for the selected date range
+    // Calculate total price for selected date range with detailed breakdown
     const calculateTotalPrice = () => {
-        if (!priceData) return { nights: 0, totalBeforeTaxes: 0 };
+        if (!priceData) return { nights: 0, totalBeforeTaxes: 0, priceBreakdown: [] };
 
         let total = 0;
         let currentDate = new Date(state[0].startDate);
         const endDate = new Date(state[0].endDate);
+        const priceBreakdown: {date: Date, price: number}[] = [];
         
         while (currentDate < endDate) {
-            total += getPriceForMonth(currentDate);
+            const price = getPriceForDate(currentDate);
+            priceBreakdown.push({
+                date: new Date(currentDate),
+                price: price
+            });
+            total += price;
             currentDate = addDays(currentDate, 1);
         }
 
         const nights = differenceInDays(endDate, state[0].startDate);
-        return { nights, totalBeforeTaxes: total };
+        return { nights, totalBeforeTaxes: total, priceBreakdown };
     };
 
-    const { nights, totalBeforeTaxes } = calculateTotalPrice();
+    const { nights, totalBeforeTaxes, priceBreakdown } = calculateTotalPrice();
     const nightlyRate = nights > 0 ? Math.round(totalBeforeTaxes / nights) : 0;
 
     const handleOpenDate = () => {
@@ -269,70 +327,44 @@ const Merano29Book = () => {
         }
     };
 
-  const handleBookNow = async () => {
-    let currentDate = new Date(state[0].startDate);
-    const endDate = new Date(state[0].endDate);
-    let hasBookedDates = false;
-
-    while (currentDate < endDate) {
-        if (isDateBooked(currentDate)) {
-            hasBookedDates = true;
-            break;
+    const handleBookNow = async () => {
+        let currentDate = new Date(state[0].startDate);
+        const endDate = new Date(state[0].endDate);
+        let hasBookedDates = false;
+        
+        while (currentDate < endDate) {
+            if (isDateBooked(currentDate)) {
+                hasBookedDates = true;
+                break;
+            }
+            currentDate = addDays(currentDate, 1);
         }
-        currentDate = addDays(currentDate, 1);
-    }
-
-    if (hasBookedDates) {
-        alert('These dates have just been booked. Please choose different dates.');
-        await fetchBookedDates();
-        return;
-    }
-
-    const startDate = state[0].startDate.toISOString();
-    const endDateStr = state[0].endDate.toISOString();
-    const guests = guest.adult;
-    const children = guest.children;
-    const price = nightlyRate;
-    const totalPrice = totalBeforeTaxes;
-    const roomname = "Merano 2906 ";
-
-    try {
-        // ❌ Disable actual API call
-        // const response = await fetch('http://localhost:7000/api/checkout', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({
-        //         roomname,
-        //         checkin: startDate,
-        //         checkout: endDateStr,
-        //         guests,
-        //         children,
-        //         price,
-        //         totalPrice
-        //     })
-        // });
-
-        // ✅ Fake successful response
-        const response = { ok: true }; // simulate successful booking
-
-        if (!response.ok) {
-            throw new Error('Booking failed');
+        
+        if (hasBookedDates) {
+            alert('These dates have just been booked. Please choose different dates.');
+            await fetchBookedDates();
+            return;
         }
 
-        await fetchBookedDates();
-
-        router.push(
-            `/checkout?roomname=${roomname}&startDate=${startDate}&endDate=${endDateStr}&guests=${guests}&children=${children}&price=${price}&totalPrice=${totalPrice}`
-        );
-    } catch (error) {
-        console.error('Booking error:', error);
-        alert('Booking failed. Please try again.');
-    }
-};
-
-
+        const startDate = state[0].startDate.toISOString();
+        const endDateStr = state[0].endDate.toISOString();
+        const guests = guest.adult;
+        const children = guest.children;
+        const price = nightlyRate;
+        const totalPrice = totalBeforeTaxes;
+        const roomname = "merano-2906";
+      
+        try {
+            await fetchBookedDates();
+            
+            router.push(
+                `/checkout?roomname=${roomname}&startDate=${startDate}&endDate=${endDateStr}&guests=${guests}&children=${children}&price=${price}&totalPrice=${totalPrice}`
+            );
+        } catch (error) {
+            console.error('Booking error:', error);
+            alert('Booking failed. Please try again.');
+        }
+    };
 
     if (loading) {
         return <div>Loading price information...</div>;
@@ -468,10 +500,17 @@ const Merano29Book = () => {
                     <div className="price-block mt-5">
                         <div className="heading6 text-start">Price Details</div>
                         <div className="list mt-2">
-                            <div className="flex items-center justify-between">
-                                <div className="text-button" style={{fontSize: '12px', fontWeight: 'bolder'}}>AED {nightlyRate} x {nights} {nights === 1 ? 'Night' : 'Nights'}</div>
-                                <div className="text-button" style={{fontSize: '12px', fontWeight: 'bolder'}}>AED {totalBeforeTaxes}</div>
-                            </div>
+                            {/* Show detailed price breakdown */}
+                            {priceBreakdown.map((day, index) => (
+                                <div key={index} className="flex items-center justify-between py-1">
+                                    <div className="text-button" style={{fontSize: '12px', fontWeight: 'bolder'}}>
+                                        {day.date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' })}
+                                    </div>
+                                    <div className="text-button" style={{fontSize: '12px', fontWeight: 'bolder'}}>
+                                        AED {day.price}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                         <div className="total-block mt-5 pt-5 border-t border-outline flex items-center justify-between">
                             <div className="heading6">Total Price</div>

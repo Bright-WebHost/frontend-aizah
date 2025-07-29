@@ -13,11 +13,11 @@ const LocationOne = () => {
 
     return (
         <>
-            <div className="location-block lg:pt-20 md:pt-14 pt-10">
+            <div className="location-block lg:pt-20 md:pt-14 pt-10 ">
                 <div className="container">
                     <TextHeading title='Popular homes in Dubai' subTitle='' />
-                    <div className="list-location grid lg:grid-cols-3 min-[370px]:grid-cols-1 md:gap-[30px] gap-y-7 gap-4 md:mt-10 mt-6">
-                        <div
+                    <div className="list-location grid lg:grid-cols-4 min-[370px]:grid-cols-1 md:gap-[30px] gap-y-7 gap-4 md:mt-10 mt-6">
+                        {/* <div
                             className="item hover-scale"
                             // onClick={() => handleClickContinents('Africa')}
                         >
@@ -45,6 +45,7 @@ const LocationOne = () => {
   </div>
                             </Link>
                         </div>
+
                         <div
                             className="item hover-scale"
                             // onClick={() => handleClickContinents('Asia')}
@@ -60,6 +61,8 @@ const LocationOne = () => {
                                     className='w-full'
                                 />
                             </div>
+
+                            
                           
                             <div className="name heading5 sm:mt-5 mt-3">Dubai mall</div>
                             <div className='flex  items-center  gap-6'>
@@ -74,6 +77,7 @@ const LocationOne = () => {
   </div>
                             </Link>
                         </div>
+                        
                         <div
                             className="item hover-scale"
                             // onClick={() => handleClickContinents('Europe')}
@@ -101,7 +105,7 @@ const LocationOne = () => {
   </div>
   </div>
                             </Link>
-                        </div>
+                        </div> */}
 
 
                         <div
@@ -111,7 +115,7 @@ const LocationOne = () => {
                              <Link href='camp/merano'>
                             <div className="bg-img w-full sm:rounded-[20px] rounded-xl overflow-hidden">
                                 <Image
-                                    src={'/images/allimg/rooms/Merano/3.png'}
+                                    src={'/images/allimg/bannerimg/1.png'}
                                     width={3000}
                                     height={2000}
                                     alt='1.png'
@@ -139,7 +143,7 @@ const LocationOne = () => {
                             <Link href='camp/majestine'>
                             <div className="bg-img w-full sm:rounded-[20px] rounded-xl overflow-hidden">
                                 <Image
-                                    src={'/images/allimg/rooms/Majestine/3.png'}
+                                    src={'/images/allimg/bannerimg/3.png'}
                                     width={3000}
                                     height={2000}
                                     alt='2.png'
@@ -152,7 +156,7 @@ const LocationOne = () => {
                             <div className='flex  items-center  gap-6'>
                             <div className="flex items-center gap-3">
     <span className="fi fi-rr-users  text-[20px] text-[#32548e]"></span>
-    <div className="body2">3 Guests</div>
+    <div className="body2">2 Guests</div>
   </div>
                             <div className="flex items-center gap-3">
     <span className="fi fi-rr-bed  text-[20px] text-[#32548e]"></span>
@@ -169,7 +173,7 @@ const LocationOne = () => {
                              <Link href='camp/reva'>
                             <div className="bg-img w-full sm:rounded-[20px] rounded-xl overflow-hidden">
                                 <Image
-                                    src={'/images/allimg/rooms/Reva/5.png'}
+                                    src={'/images/allimg/bannerimg/4.png'}
                                     width={3000}
                                     height={2000}
                                     alt='3.png'
@@ -185,7 +189,7 @@ const LocationOne = () => {
   </div>
                             <div className="flex items-center gap-3">
     <span className="fi fi-rr-bed  text-[20px] text-[#32548e]"></span>
-    <div className="body2">1 Room</div>
+    <div className="body2">2 Room</div>
   </div>
   </div>
                             </Link>
@@ -197,7 +201,7 @@ const LocationOne = () => {
                              <Link href='camp/merano-2906'>
                             <div className="bg-img w-full sm:rounded-[20px] rounded-xl overflow-hidden">
                                 <Image
-                                    src={'/images/allimg/rooms/Merano-2906/3.png'}
+                                    src={'/images/allimg/bannerimg/2.png'}
                                     width={3000}
                                     height={2000}
                                     alt='3.png'
@@ -209,7 +213,7 @@ const LocationOne = () => {
                             <div className='flex  items-center  gap-6'>
                             <div className="flex items-center gap-3">
     <span className="fi fi-rr-users  text-[20px] text-[#32548e]"></span>
-    <div className="body2">2 Guests</div>
+    <div className="body2">3 Guests</div>
   </div>
                             <div className="flex items-center gap-3">
     <span className="fi fi-rr-bed  text-[20px] text-[#32548e]"></span>

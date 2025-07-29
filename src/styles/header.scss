@@ -1,6 +1,6 @@
 .header-main {
     position: relative;
-    border-bottom: 1px solid var(--outline);
+    // border-bottom: 1px solid var(--outline);
     z-index: 1003;
 
     &.fixed {
@@ -23,7 +23,7 @@
                     left: 0;
                     width: 0;
                     height: 2px;
-                    background-color: var(--primary);
+                    background-color: white;
                     transition: all ease 0.3s;
                 }
             }

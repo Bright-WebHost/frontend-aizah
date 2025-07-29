@@ -42,24 +42,25 @@ const HeaderTwo = () => {
 
 
 
-<div className="content-detail border-t border-outline pt-2">
+<div className="content-detail  pt-2   bg-[#32548E]">
                     <div className="container">
                         <div className="flex max-lg:flex-col-reverse gap-y-10 justify-between">
                             <div className="content xl:w-3/3 lg:w-[100%] lg:pr-[15px] w-full">
 
 
 {/* this call old */}
-                            <div  id="header" className='header '>
-                <div className={`header-main h-20 w-full bg-white px-4 min-[1322px]:px-10 flex items-center justify-between ` }>
+                            <div  id="header" className='header'>
+                <div className={`header-main h-20 w-full bg-[#32548E] px-4 min-[1322px]:px-10 flex items-center justify-between ` }>
                     <Link href={'/'} className="logo">
                         <Image
-                            src={'/images/allimg/logo/logo.jpg'}
+                            src={'/images/allimg/logos/Aizahlogo.png'}
+                            // src={'/images/allimg/logo/logo.jpg'}
                             width={200}
-                            height={200}
+                            height={600}
                             alt='logo'
                             priority={true}
-                            className='sm:w-[100px] w-[100px] '
-                            style={{marginBottom:'30px'}}
+                            // className='sm:w-[100px] w-[100px] '
+                            style={{marginBottom:'10px'}}
                         />
                     </Link>
                     {/* <HeaderThree/> */}
@@ -208,10 +209,10 @@ const HeaderTwo = () => {
                             </li> */}
 
 
-                            <li className='h-full relative'>
+                            <li className='h-full relative '>
                                 <Link
                                     href="/"
-                                    className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 ${pathname === '/' ? 'active' : ''}`}
+                                    className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 text-white ${pathname === '/' ? 'active' : ''}`}
                                 >
                                     Home
                                 </Link>
@@ -219,7 +220,7 @@ const HeaderTwo = () => {
                             <li className='h-full relative'>
                                 <Link
                                     href="/about"
-                                    className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 ${pathname === '/about' ? 'active' : ''}`}
+                                    className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 text-white ${pathname === '/about' ? 'active' : ''}`}
                                 >
                                     About us
                                 </Link>
@@ -227,7 +228,7 @@ const HeaderTwo = () => {
                             <li className='h-full relative'>
                                 <Link
                                     href="/room"
-                                    className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 ${pathname === '/room' ? 'active' : ''}`}
+                                    className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 text-white ${pathname === '/room' ? 'active' : ''}`}
                                 >
                                    Rooms
                                 </Link>
@@ -272,7 +273,7 @@ const HeaderTwo = () => {
                             <li className='h-full relative'>
                                 <Link
                                     href="/pages/contact"
-                                    className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 ${pathname === '/Contact' ? 'active' : ''}`}
+                                    className={`text-button1 duration-300 h-full flex items-center justify-center gap-1  text-white ${pathname === '/Contact' ? 'active' : ''}`}
                                 >
                                     Contact
                                 </Link>
@@ -532,27 +533,27 @@ const HeaderTwo = () => {
                                         className={`${openSubNavMobile === 5 ? 'open' : ''}`}
                                         onClick={() => handleOpenSubNavMobile(5)}
                                     >
-                                        <div >
+                                        <div>
                                          
-                                            <div className="list-nav-item w-full pt-2 pb-6">
-                                                <ul className='w-full'>
+                                            <div className="list-nav-item w-full pt-2 pb-6 ">
+                                                <ul className='w-full ml-[30px] mt'>
                                                     <li>
-                                                        <Link href="#" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line ${pathname === '/pages/contact' ? 'active' : ''}`}>
+                                                        <Link href="/" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line text-xl leading-10 ${pathname === '/pages/contact' ? 'active' : ''}`}>
                                                             home
                                                         </Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="#" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line ${pathname === '/pages/contact' ? 'active' : ''}`}>
+                                                        <Link href="/about" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line  text-xl leading-10${pathname === '/pages/contact' ? 'active' : ''}`}>
                                                           About us
                                                         </Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/camp/tent-detail" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line ${pathname === '/pages/contact' ? 'active' : ''}`}>
+                                                        <Link href="/room" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line text-xl leading-10 ${pathname === '/pages/contact' ? 'active' : ''}`}>
                                                            Room
                                                         </Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="#" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line ${pathname === '/pages/contact' ? 'active' : ''}`}>
+                                                        <Link href="/pages/contact" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line text-xl   leading-10  ${pathname === '/pages/contact' ? 'active' : ''}`}>
                                                         Contact
                                                         </Link>
                                                     </li>

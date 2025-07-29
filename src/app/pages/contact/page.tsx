@@ -24,23 +24,31 @@ const Contact = () => {
                                 </div>
                                 <div className="style-contact-us">
                                     <div className="list-social flex items-center flex-wrap gap-5 mt-4">
-                                        <Link className="item rounded-full md:w-[52px] w-12 md:h-[52px] h-12 flex items-center justify-center flex-shrink-0 border border-outline text-variant1 duration-500 hover:border-[#f1dd38] hover:bg-[#32548E] hover:text-white" href="https://www.facebook.com/" target="_blank">
+                                       
+                                        <Link className="item rounded-full md:w-[52px] w-12 md:h-[52px] h-12 flex items-center justify-center flex-shrink-0 border border-outline text-variant1 duration-500 hover:border-[#f1dd38] hover:bg-[#32548E] hover:text-white" href="https://www.instagram.com/aizahhospitality/" target="_blank">
+                                        <span className="fi fi-brands-instagram  md:text-xl text-lg"></span>
+                                        </Link>
+                                       <Link
+  className="item rounded-full md:w-[52px] w-12 md:h-[52px] h-12 flex items-center justify-center flex-shrink-0 border border-outline text-variant1 duration-500 hover:border-[#f1dd38] hover:bg-[#32548E] hover:text-white"
+  href="https://wa.me/919876543210" // Replace with actual WhatsApp number
+  target="_blank"
+>
+  <span className="fi fi-brands-whatsapp md:text-xl text-lg"></span>
+</Link>
+
+                                         <Link className="item rounded-full md:w-[52px] w-12 md:h-[52px] h-12 flex items-center justify-center flex-shrink-0 border border-outline text-variant1 duration-500 hover:border-[#f1dd38] hover:bg-[#32548E] hover:text-white" href="https://www.facebook.com/" target="_blank">
                                             {/* <i className="icon-facebook "></i> */}
                                             <span className="fi fi-brands-facebook  md:text-xl text-lg"></span>
                                         </Link>
-                                        <Link className="item rounded-full md:w-[52px] w-12 md:h-[52px] h-12 flex items-center justify-center flex-shrink-0 border border-outline text-variant1 duration-500 hover:border-[#f1dd38] hover:bg-[#32548E] hover:text-white" href="https://www.instagram.com/" target="_blank">
-                                        <span className="fi fi-brands-instagram  md:text-xl text-lg"></span>
-                                        </Link>
-                                        <Link className="item rounded-full md:w-[52px] w-12 md:h-[52px] h-12 flex items-center justify-center flex-shrink-0 border border-outline text-variant1 duration-500 hover:border-[#f1dd38] hover:bg-[#32548E] hover:text-white" href="https://www.twitter.com/" target="_blank">
-                                        <span className="fi fi-brands-whatsapp  md:text-xl text-lg"></span>
-                                        </Link>
-                                        <Link className="item rounded-full md:w-[52px] w-12 md:h-[52px] h-12 flex items-center justify-center flex-shrink-0 border border-outline text-variant1 duration-500 hover:border-[#f1dd38] hover:bg-[#32548E] hover:text-white" href="https://www.linkedin.com/" target="_blank">
-                                        <span className="fi fi-brands-linkedin  md:text-xl text-lg"></span>
-                                        </Link>
                                        
-                                        <Link className="item rounded-full md:w-[52px] w-12 md:h-[52px] h-12 flex items-center justify-center flex-shrink-0 border border-outline text-variant1 duration-500 hover:border-[#f1dd38] hover:bg-[#32548E] hover:text-white" href="https://www.youtube.com/" target="_blank">
-                                        <span className="fi fi-rr-envelope  md:text-xl text-lg"></span>
-                                        </Link>
+                                        <Link
+                                         className="item rounded-full md:w-[52px] w-12 md:h-[52px] h-12 flex items-center justify-center flex-shrink-0 border border-outline text-variant1 duration-500 hover:border-[#f1dd38] hover:bg-[#32548E] hover:text-white"
+                                         href="mailto:Aizahandaisha@gmail.com"
+                                         target="_blank"
+                                       >
+                                         <span className="fi fi-rr-envelope md:text-xl text-lg"></span>
+                                       </Link>
+
                                       
                                     </div>
                                 </div>
@@ -50,7 +58,7 @@ const Contact = () => {
                                             <Icon.EnvelopeSimpleOpen className='text-white text-2xl' />
                                         </div>
                                         <div className="w-px h-12 bg-outline"></div>
-                                        <div className="body2">demo@gmail.com</div>
+                                        <div className="body2">Aizahandaisha@gmail.com </div>
                                     </div>
                                     <div className="item flex items-center gap-6 mt-5">
                                         <div className='flex items-center justify-center w-12 h-12 bg-[#32548E] flex-shrink-0 rounded-full'>
@@ -64,7 +72,13 @@ const Contact = () => {
                                             <Icon.MapPinLine className='text-white text-2xl' />
                                         </div>
                                         <div className="w-px h-12 bg-outline"></div>
-                                        <div className="body2">Dubai - United Arab Emirates</div>
+                                        <div className="body2">Little paradise properties LLC
+Oryx world business centre 
+A 0404
+P3 floor ,
+Empire heights tower 
+Business bay , dubai 
+124584, United Arab Emirates</div>
                                     </div>
                                 </div>
                             </div>

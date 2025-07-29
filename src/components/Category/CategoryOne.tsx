@@ -26,7 +26,7 @@ const CategoryOne = () => {
                         >
                            
                             <span className='fi fi-rr-users   text-4xl '></span>
-                            <Link href='camp/tent-detail'>
+                            <Link href='room'>
                             <div className="text-title mt-2">couples </div>
                             </Link>
                         </div>
@@ -35,7 +35,7 @@ const CategoryOne = () => {
                             // onClick={() => handleClickCate('tented cabins')}
                         >
                             <span className='fi fi-rr-train   text-4xl '></span>
-                            <Link href='camp/tent-detail'>
+                            <Link href='room'>
                             <div className="text-title mt-2 text-center">Near Metro <br/>Station </div>
                             </Link>
                         </div>
@@ -44,7 +44,7 @@ const CategoryOne = () => {
                             // onClick={() => handleClickCate('safari tents')}
                         >
                             <span className='fi fi-rr-building  text-4xl '></span>
-                            <Link href='camp/tent-detail'>
+                            <Link href='room'>
                             <div className="text-title mt-2 text-center">Near Downtown <br/> Dubai </div>
                             </Link>
                         </div>
@@ -53,7 +53,7 @@ const CategoryOne = () => {
                             // onClick={() => handleClickCate('cottages')}
                         >
                              <span className='fi fi-rr-restaurant  text-4xl '></span>
-                             <Link href='camp/tent-detail'>
+                             <Link href='room'>
                             <div className="text-title mt-2">Kitchen </div>
                             </Link>
                         </div>
@@ -62,7 +62,7 @@ const CategoryOne = () => {
                             // onClick={() => handleClickCate('tiny houses')}
                         >
                             <span className='fi fi-rr-swimmer   text-4xl '></span>
-                            <Link href='camp/tent-detail'>
+                            <Link href='room'>
                             <div className="text-title mt-2">Swimming Pool</div>
                             </Link>
                         </div>
@@ -71,7 +71,7 @@ const CategoryOne = () => {
                             // onClick={() => handleClickCate('caravans')}
                         >
                             <span className='fi fi-rr-house-laptop  text-4xl '></span>
-                            <Link href='camp/tent-detail'>
+                            <Link href='room'>
                             <div className="text-title mt-2">Work Space</div>
                             </Link>
                         </div>

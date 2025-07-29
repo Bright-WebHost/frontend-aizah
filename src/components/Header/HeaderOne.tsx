@@ -534,25 +534,25 @@ const HeaderOne = () => {
                                     >
                                         <div >
                                          
-                                            <div className="list-nav-item w-full pt-2 pb-6">
-                                                <ul className='w-full'>
+                                          <div className="list-nav-item w-full pt-2 pb-6 ">
+                                                <ul className='w-full ml-[30px] mt'>
                                                     <li>
-                                                        <Link href="#" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line ${pathname === '/pages/contact' ? 'active' : ''}`}>
+                                                        <Link href="/" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line text-xl leading-10 ${pathname === '/pages/contact' ? 'active' : ''}`}>
                                                             home
                                                         </Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="#" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line ${pathname === '/pages/contact' ? 'active' : ''}`}>
+                                                        <Link href="/about" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line  text-xl leading-10${pathname === '/pages/contact' ? 'active' : ''}`}>
                                                           About us
                                                         </Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/camp/tent-detail" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line ${pathname === '/pages/contact' ? 'active' : ''}`}>
+                                                        <Link href="/room" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line text-xl leading-10 ${pathname === '/pages/contact' ? 'active' : ''}`}>
                                                            Room
                                                         </Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="#" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line ${pathname === '/pages/contact' ? 'active' : ''}`}>
+                                                        <Link href="/pages/contact" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line text-xl   leading-10  ${pathname === '/pages/contact' ? 'active' : ''}`}>
                                                         Contact
                                                         </Link>
                                                     </li>

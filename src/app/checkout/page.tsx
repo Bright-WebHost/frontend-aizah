@@ -36,8 +36,7 @@ const Checkout = () => {
   const adults = searchParams.get('adults');
   const children = searchParams.get('children');
   const pets = searchParams.get('pets');
-  const totalPrice = searchParams.get('totalPrice');
-  const price = searchParams.get('price');
+  const roomPrice = searchParams.get('price') || '0';
   const roomname = searchParams.get('roomname');
 
   const formattedStartDate = startDate ? format(new Date(startDate), 'd-MMM-yyyy') : '';
@@ -47,6 +46,13 @@ const Checkout = () => {
   const totalNights = startDate && endDate
     ? differenceInDays(new Date(endDate), new Date(startDate))
     : 1;
+
+  // Calculate tourism fee (AED 20 per night)
+  const tourismFee = totalNights * 20;
+  // Calculate room total (price per night * number of nights)
+  const roomTotal = parseInt(roomPrice) * totalNights;
+  // Calculate total price (room total + tourism fee)
+  const totalPrice = roomTotal + tourismFee;
 
   const loadRazorpayScript = () => {
     return new Promise((resolve) => {
@@ -61,7 +67,7 @@ const Checkout = () => {
   useEffect(() => {
     const fetchApiKey = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/keyview`);
+        const response = await axios.get(`http://localhost:7000/api/keyview`);
         const keyData = response.data?.data?.[0];
         if (keyData) {
           setApiKey(keyData.key);
@@ -90,8 +96,9 @@ const Checkout = () => {
       guests: guests,
       totalprice: totalPrice,
       night: totalNights,
-      price: price,
+      price: roomPrice,
       roomname: roomname,
+      tourismFee: tourismFee,
       booking: {
         startDate,
         endDate,
@@ -107,7 +114,7 @@ const Checkout = () => {
     };
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/checkout`, {
+      const res = await fetch(`http://localhost:7000/api/checkout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -139,8 +146,9 @@ const Checkout = () => {
       guests: guests,
       totalprice: totalPrice,
       night: totalNights,
-      price: price,
+      price: roomPrice,
       roomname: roomname,
+      tourismFee: tourismFee,
       booking: {
         startDate,
         endDate,
@@ -156,7 +164,7 @@ const Checkout = () => {
     };
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/checkoutSubmit`, {
+      const res = await fetch(`http://localhost:7000/api/checkoutSubmit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -166,6 +174,7 @@ const Checkout = () => {
       
       const data = await res.json();
       setBookingDetails(data.data);
+      
       return true;
     } catch (error) {
       console.error('Error submitting COD booking:', error);
@@ -188,7 +197,7 @@ const Checkout = () => {
 
     setLoading(true);
 
-    const orderAmount = totalPrice ? parseInt(totalPrice) * 100 : 10000;
+    const orderAmount = totalPrice * 100; // Convert to paise
 
     const options = {
       key: apiKey,
@@ -272,9 +281,10 @@ const Checkout = () => {
         guests: guests,
         night: totalNights,
         totalprice: totalPrice,
-        price: price,
+        price: roomPrice,
         roomname: roomname,
-        paymentID: paymentMethod === 'card' ? paymentID : 'COD'
+        paymentID: paymentMethod === 'card' ? paymentID : 'COD',
+        tourismFee: tourismFee
       };
 
       // Dynamically import jsPDF
@@ -322,11 +332,13 @@ const Checkout = () => {
       doc.text('Payment Information:', 20, 180);
       doc.setFontSize(12);
       doc.setTextColor(0, 0, 0);
-      doc.text(`Payment Method: ${paymentMethod === 'card' ? 'Payment Sucess' : 'Pay at Site'}`, 20, 190);
+      doc.text(`Payment Method: ${paymentMethod === 'card' ? 'Payment Success' : 'Pay at Site'}`, 20, 190);
       if (paymentMethod === 'card') {
         doc.text(`Payment ID: ${receiptData.paymentID}`, 20, 200);
       }
-      doc.text(`Total Amount: ₹${receiptData.totalprice}`, 20, 210);
+      // doc.text(`Room Price: ₹${receiptData.price} x ${receiptData.night} nights = ₹${parseInt(receiptData.price) * receiptData.night}`, 20, 210);
+      doc.text(`Tourism Fee: AED ${receiptData.tourismFee}`, 20, 220);
+      doc.text(`Total Amount: ₹${receiptData.totalprice}`, 20, 230);
       
       // Footer
       doc.setFontSize(12);
@@ -517,13 +529,19 @@ const Checkout = () => {
                 <p className="font-semibold">Nights</p>
                 <p>{totalNights}</p>
               </div>
-              <div className="flex justify-between mb-6 border-b border-gray-300 pb-6">
-                <p className="font-semibold">Price per Night</p>
-                <p>₹{price}</p>
+             
+              <div className="flex justify-between mb-4">
+                <p className="font-semibold">Tourism Fee</p>
+                <p>AED {tourismFee}</p>
+              </div>
+
+ <div className="flex justify-between mb-4  border-b pb-6 ">
+                <p className="font-semibold">Room Price</p>
+                <p>AED {parseInt(roomPrice) * totalNights}</p>
               </div>
               <div className="flex justify-between font-semibold text-lg">
                 <p>Total</p>
-                <p>₹{totalPrice}</p>
+                <p>AED {totalPrice}</p>
               </div>
             </div>
           </div>
@@ -557,6 +575,10 @@ const Checkout = () => {
                 <p><span className="font-medium">Room:</span> {roomname}</p>
                 <p><span className="font-medium">Dates:</span> {formattedStartDate} to {formattedEndDate}</p>
                 <p><span className="font-medium">Guests:</span> {guests} (Adults: {adults || '0'}, Children: {children || '0'})</p>
+                <p><span className="font-medium">Total Nights:</span> {totalNights}</p>
+                <p><span className="font-medium">Room Price:</span> AED {parseInt(roomPrice) * totalNights}</p>
+                <p><span className="font-medium">Tourism Fee:</span> AED {tourismFee}</p>
+                <p><span className="font-medium">Total Amount:</span> AED {totalPrice}</p>
                 {paymentMethod === 'card' && (
                   <p><span className="font-medium">Payment ID:</span> {paymentID}</p>
                 )}
@@ -564,11 +586,10 @@ const Checkout = () => {
 
               <div className="flex justify-center gap-4">
                 <button
-                 
                   onClick={downloadBookingDetails}
-                  className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+                  className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-black px-4 py-2 rounded"
                 >
-                  <FaDownload /> <span style={{color:"black"}}>Download Receipt</span>
+                  <FaDownload /> Download Receipt
                 </button>
                 <button
                   onClick={closePopup}

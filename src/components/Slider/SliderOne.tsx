@@ -104,7 +104,7 @@ const SliderOne = () => {
 
     return (
         <>
-           <div className="slider-block style-one relative h-[620px]">
+           <div className="slider-block style-one relative h-[620px] " style={{marginTop:'-9px'}}>
   <div className="bg-img absolute top-0 left-0 w-full h-full">
     {/* Background Image */}
     <Image

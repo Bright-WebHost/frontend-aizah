@@ -12,13 +12,16 @@ import testimonialData from '@/data/Testimonial.json'
 import Testimonial from '@/components/Testimonial/Testimonial';
 import TextHeading from '@/components/TextHeading/TextHeading';
 import Footer from '@/components/Footer/Footer'
+import RecommendOne from '@/components/Recommend/RecommendOne'
+import tentData from '@/data/Tent.json'
 
+import HeaderTwo from '@/components/Header/HeaderTwo'
 const About = () => {
     const [openVideo, setOpenVideo] = useState<boolean>(false)
 
     return (
         <>
-            <HeaderOne />
+       <HeaderTwo/>
             <Breadcrumb img='/images/allimg/aboutBanner.png' heading='About' subHeading='' />
             <div className="video-greeting lg:pt-20 md:pt-14 pt-10">
                 <div className="container">
@@ -27,7 +30,7 @@ const About = () => {
 </div>
                         <div className="body2 text-variant1 text-center mt-4">Aizah Hospitality was born from a blend of precision, passion, and wanderlust. With a background in engineering and the privilege of traveling across diverse countries, the vision behind Aizah Hospitality is deeply rooted in an appreciation for thoughtful design and the unique beauty of global hospitality.</div>
                     </div>
-                    <div className="video-block relative rounded-[20px] overflow-hidden md:mt-10 mt-6">
+                    {/* <div className="video-block relative rounded-[20px] overflow-hidden md:mt-10 mt-6">
                         <div className="bg-img w-full">
                             <Image
                                 src={'/images/other/bg-about.png'}
@@ -44,7 +47,8 @@ const About = () => {
                         >
                             <Icon.Play className='lg:text-5xl sm:text-4xl text-3xl text-white' weight='fill' />
                         </div>
-                    </div>
+                    </div> */}
+                     <RecommendOne data={tentData} start={10} end={18} />
                 </div>
             </div>
             <div className={`modal-video-block`} onClick={() => setOpenVideo(false)}>
@@ -58,7 +62,8 @@ const About = () => {
             {/* <Amenities /> */}
             <Benefit />
             {/* <Testimonial data={testimonialData} /> */}
-            <div className="team-block lg:pt-20 md:pt-14 pt-10 mb-10">
+
+            {/* <div className="team-block lg:pt-20 md:pt-14 pt-10 mb-10">
                 <div className="container">
                     <TextHeading title='Meet our Team' subTitle='Our team of Glamping enthusiasts and experts is at the heart of our mission' />
                     <div className="list grid md:grid-cols-3 gap-[30px] md:mt-10 mt-6">
@@ -76,13 +81,13 @@ const About = () => {
                             <div className="flex items-center justify-between mt-5">
                                 <div>
                                     <div className="heading5">Person 1</div>
-                                    {/* <div className="caption1 text-variant1 mt-1">Graphic Designer</div> */}
+                                    <div className="caption1 text-variant1 mt-1">Graphic Designer</div>
                                 </div>
-                                {/* <Link href={'https://www.twitter.com/'} target='_blank'
+                                <Link href={'https://www.twitter.com/'} target='_blank'
                                     className='bg-surface duration-300 hover:bg-[#F1DD38] hover:text-white w-12 h-12 rounded-full flex items-center justify-center'
                                 >
                                     <span className='icon-twitter text-lg'></span>
-                                </Link> */}
+                                </Link>
                             </div>
                         </div>
                         <div className="item">
@@ -99,13 +104,13 @@ const About = () => {
                             <div className="flex items-center justify-between mt-5">
                                 <div>
                                     <div className="heading5">Person 2</div>
-                                    {/* <div className="caption1 text-variant1 mt-1">CEO - DigiNova</div> */}
+                                    <div className="caption1 text-variant1 mt-1">CEO - DigiNova</div>
                                 </div>
-                                {/* <Link href={'https://www.twitter.com/'} target='_blank'
+                                <Link href={'https://www.twitter.com/'} target='_blank'
                                     className='bg-surface duration-300 hover:bg-[#F1DD38] hover:text-white w-12 h-12 rounded-full flex items-center justify-center'
                                 >
                                     <span className='icon-twitter text-lg'></span>
-                                </Link> */}
+                                </Link>
                             </div>
                         </div>
                         <div className="item">
@@ -122,18 +127,19 @@ const About = () => {
                             <div className="flex items-center justify-between mt-5">
                                 <div>
                                     <div className="heading5">Person 3</div>
-                                    {/* <div className="caption1 text-variant1 mt-1">Photographer</div> */}
+                                    <div className="caption1 text-variant1 mt-1">Photographer</div>
                                 </div>
-                                {/* <Link href={'https://www.twitter.com/'} target='_blank'
+                                <Link href={'https://www.twitter.com/'} target='_blank'
                                     className='bg-surface duration-300 hover:bg-[#F1DD38] hover:text-white w-12 h-12 rounded-full flex items-center justify-center'
                                 >
                                     <span className='icon-twitter text-lg'></span>
-                                </Link> */}
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
+
             {/* <div className="cta-block lg:my-20 md:my-14 my-10">
                 <div className="container">
                     <div className="content-main bg-surface sm:py-10 py-8 lg:px-[60px] sm:px-10 px-8 rounded-[20px] sm:flex items-center justify-between">

@@ -12,9 +12,9 @@ const Footer = () => {
                 <div className="bg-[#32548E] lg:pt-15 md:pt-12 pt-8 " style={{borderTopLeftRadius:'30px',borderTopRightRadius:'30px'}}>
                     <div className="container">
                         <div className="footer-heading flex items-center justify-center flex-wrap gap-6 pb-[30px] border-b border-outline">
-                            <Link href={'#'}>
+                            <Link href={'/'}>
                                  <Image
-                                                            src={'/images/allimg/logo/logo.jpg'}
+                                                            src={'/images/allimg/logos/footelogo.png'}
                                                             width={100}
                                                             height={100}
                                                             alt='logo'
@@ -60,7 +60,7 @@ const Footer = () => {
                             </div> */}
                         </div>
                         <div className="footer-main flex justify-between flex-wrap gap-y-8 lg:py-10 md:py-8 py-6">
-                            <div className="company-infor lg:w-1/4 sm:w-1/2">
+                            <div className="company-infor lg:w-1/3 sm:w-1/2">
                                 <div className="flex items-center gap-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
                                         <path d="M26.43 16.1254C25.785 16.1254 25.275 15.6004 25.275 14.9704C25.275 14.4154 24.72 13.2604 23.79 12.2554C22.875 11.2804 21.87 10.7104 21.03 10.7104C20.385 10.7104 19.875 10.1854 19.875 9.55539C19.875 8.92539 20.4 8.40039 21.03 8.40039C22.53 8.40039 24.105 9.21039 25.485 10.6654C26.775 12.0304 27.6 13.7254 27.6 14.9554C27.6 15.6004 27.075 16.1254 26.43 16.1254Z" fill="white" />
@@ -85,36 +85,36 @@ const Footer = () => {
                                     <form className='w-full relative rounded-lg overflow-hidden'>
                                         <input type="email" required placeholder='Your email address' className='caption1 h-[46px] pl-4 pr-14 w-full rounded-lg' />
                                         <button className='w-12 h-full bg-primary flex items-center justify-center flex-shrink-0 absolute top-0 right-0 text-white duration-300 hover:bg-[#c42e04]'>
-                                            <Icon.PaperPlaneTilt weight='bold' className='text-xl' />
+                                            <Icon.PaperPlaneTilt weight=2'bold' className='text-xl' />
                                         </button>
                                     </form>
                                 </div> */}
                             </div>
-                            <div className="list-nav lg:w-2/3 w-full sm:flex max-sm:grid grid-cols-2 gap-8 justify-between">
+                            <div className="list-nav lg:w-1/2 w-full sm:flex max-sm:grid grid-cols-2 gap-8 justify-between">
                                 <div className="item">
                                     <div className="text-title pb-3 text-[#f1dd38]">pages</div>
-                                    <Link href={'#'} className="caption1 text-white has-line block w-fit whitespace-nowrap">Home</Link>
-                                    <Link href={'#'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">About us</Link>
-                                    <Link href={'#'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Room</Link>
-                                    <Link href={'#'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Contact</Link>
+                                    <Link href={'/'} className="caption1 text-white has-line block w-fit whitespace-nowrap">Home</Link>
+                                    <Link href={'about'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">About us</Link>
+                                    <Link href={'room'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Room</Link>
+                                    <Link href={'pages/contact'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Contact</Link>
                                    
                                 </div>
                                 <div className="item">
-                                    <div className="text-title pb-3 text-[#f1dd38]">Room</div>
-                                    <Link href={'/#'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Chic 1 BHK </Link>
-                                    <Link href={'/#'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Chic Studio</Link>
-                                    <Link href={'/#'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Refined Luxury</Link>
+                                    <div className="text-title pb-3 text-[#f1dd38]">Rooms</div>
+                                    <Link href={'/camp/merano'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Merano 1710 </Link>
+                                    <Link href={'/camp/majestine'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Majestine 618</Link>
+                                    <Link href={'/camp/reva'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Reva 1811</Link>
+                                    <Link href={'/camp/merano-2906'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Merano 2906</Link>
                                     {/* <Link href={'/#'} className="caption1 text-black  has-line block w-fit whitespace-nowrap">Room</Link> */}
                                   
                                 </div>
-                                <div className="item">
+                                {/* <div className="item">
                                     <div className="text-title pb-3 text-[#f1dd38]">Room</div>
-                                    <Link href={'/#'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Chic 1 BHK </Link>
+                                    <Link href={'/camp/merano'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Chic 1 BHK </Link>
                                     <Link href={'/#'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Chic Studio</Link>
                                     <Link href={'/#'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Refined Luxury</Link>
-                                    {/* <Link href={'/#'} className="caption1 text-black  has-line block w-fit whitespace-nowrap">Room</Link> */}
                                   
-                                </div>
+                                </div> */}
                                 {/* <div className="item">
                                     <div className="text-title pb-4">Download App</div>
                                     <Link href={'#!'}>
@@ -149,9 +149,9 @@ const Footer = () => {
                                 <div className="flex items-center gap-3">
                                     <Link href={'/#'} className='caption1 text-[#f1dd38] has-line'>Terms Of Services</Link>
                                     <div className='bg-outline w-px h-4'></div>
-                                    <Link href={'/#'} className='caption1 text-[#f1dd38] has-line'>Privacy Policy</Link>
-                                    <div className='bg-outline w-px h-4'></div>
-                                    <Link href={'/#'} className='caption1 text-[#f1dd38] has-line'>Cookie Policy</Link>
+                                    <Link href={'/PrivacyPolicy'} className='caption1 text-[#f1dd38] has-line'>Privacy Policy</Link>
+                                    {/* <div className='bg-outline w-px h-4'></div> */}
+                                    {/* <Link href={'/#'} className='caption1 text-[#f1dd38] has-line'>Cookie Policy</Link> */}
                                     {/* <Link href={'/term-of-use'} className='caption1 text-variant1 has-line'>Terms Of Services</Link>
                                     <div className='bg-outline w-px h-4'></div>
                                     <Link href={'/term-of-use'} className='caption1 text-variant1 has-line'>Privacy Policy</Link>

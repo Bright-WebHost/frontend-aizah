@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import * as Icon from 'phosphor-react'
 import HeaderOne from '@/components/Header/HeaderOne'
+import HeaderTwo from '@/components/Header/HeaderTwo'
 import Footer from '@/components/Footer/Footer'
 import tentData from '@/data/Tent.json'
 import testimonialData from '@/data/Testimonial.json'
@@ -195,20 +196,22 @@ const Merano  = () => {
     const closeModal = () => setCurrentIndex(null);
     return (
         <>
+           <HeaderTwo/>
             <div className='ten-detail  lg:ml-10 lg:mr-10' >
-                <HeaderOne />
+                {/* <HeaderOne /> */}
+             
                 {/* <HeaderThree /> */}
                 <div className="content-detail pt-8 pb-2 lg:ml-[30px] ">
                     <div className="container">
                         <div className="flex max-lg:flex-col-reverse gap-y-10 justify-between">
                             <div className="content xl:w-3/3 lg:w-[100%] lg:pr-[15px] w-full">
 
-                                <div className="flex items-center  gap-6">
+                                {/* <div className="flex items-center  gap-6">
                                     <div className="heading3">
                                     <h1 style={{fontSize:'26px',color:'black'}}>Merano 1710 </h1>
                                     </div>
                                   
-                                </div>
+                                </div> */}
                                 
                             </div>
                             </div>
@@ -923,12 +926,12 @@ const Merano  = () => {
                             <div className="review-block lg:mt-10 mt-6 lg:pt-10 pt-6 border-t border-outline">
                                     <div className="flex items-center justify-between">
                                         <div className="heading5">Guest reviews</div>
-                                        <Link href={'#form-review'} className='text-button-sm px-5 py-2 rounded-lg border duration-300 hover:bg-[#f6dd49] hover:text-white hover:border-white bg-[#32548e] text-white'>Add Reviews</Link>
+                                        {/* <Link href={'#form-review'} className='text-button-sm px-5 py-2 rounded-lg border duration-300 hover:bg-[#f6dd49] hover:text-white hover:border-white bg-[#32548e] text-white'>Add Reviews</Link> */}
                                     </div>
                                   <div className="list-review lg:pt-4 pt-2">
   {testimonialData.slice(0, 2).map((item, index) => (
    <div key={index} className="item flex flex-col sm:flex-row gap-5 md:mt-6 mt-4 w-full">
-  <div className="avatar w-[60px] h-[60px] rounded-full overflow-hidden flex-shrink-0">
+  {/* <div className="avatar w-[60px] h-[60px] rounded-full overflow-hidden flex-shrink-0">
   <Image
     src={item.avatar}
     width={400}
@@ -937,14 +940,14 @@ const Merano  = () => {
     priority={true}
     className="w-full h-full object-cover"
   />
-</div>
+</div> */}
 
    <div className="review pb-6 border-b border-outline w-full">
      <div className="flex items-center gap-2">
        <div className="heading5">{item.name}</div>
        <Icon.CheckCircle weight="fill" className="text-success" />
      </div>
-     <div className="date mt-1 text-variant2">{item.date}</div>
+     {/* <div className="date mt-1 text-variant2">{item.date}</div> */}
      <Rate currentRate={item.star} classname="mt-2" />
      <div
        className="body mt-2"
@@ -1255,7 +1258,7 @@ const Merano  = () => {
         <div className="relative">
           <iframe
             className="w-full h-[360px] rounded-lg"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11000.863358972638!2d55.2741925!3d25.18500985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f682def25f457%3A0x3dd4c4097970950e!2sBusiness%20Bay%20-%20Dubai%20-%20United%20Arab%20Emirates!5e1!3m2!1sen!2sin!4v1744192045088!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.4045427290444!2d55.2603221!3d25.184828099999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69d05fc5c007%3A0x2244cfc2de3b602d!2sDAMAC%20MERANO%20TOWER%2CBusiness%20Bay!5e1!3m2!1sen!2sin!4v1753678222357!5m2!1sen!2sin"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

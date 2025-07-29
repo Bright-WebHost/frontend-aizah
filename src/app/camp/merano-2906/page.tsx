@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import * as Icon from 'phosphor-react'
-import HeaderOne from '@/components/Header/HeaderOne'
+import HeaderTwo from '@/components/Header/HeaderTwo'
 import Footer from '@/components/Footer/Footer'
 import tentData from '@/data/Tent.json'
 import testimonialData from '@/data/Testimonial.json'
@@ -197,8 +197,9 @@ const MeranoTwo   = () => {
     const closeModal = () => setCurrentIndex(null);
     return (
         <>
+         <HeaderTwo />
             <div className='ten-detail  lg:ml-10 lg:mr-10' >
-                <HeaderOne />
+               
                 {/* <HeaderThree /> */}
                 <div className="content-detail pt-8 pb-2 lg:ml-[30px] ">
                     <div className="container">
@@ -834,7 +835,7 @@ const MeranoTwo   = () => {
                                 </div> */}
 
 
-<div className="content-detail border-t border-outline pt-4">
+{/* <div className="content-detail border-t border-outline pt-4">
   <div className="container">
     <div className="flex flex-col lg:flex-row-reverse gap-y-10 justify-between">
       
@@ -859,7 +860,7 @@ const MeranoTwo   = () => {
 
     </div>
   </div>
-</div>
+</div> */}
 
 
 
@@ -937,12 +938,12 @@ const MeranoTwo   = () => {
                             <div className="review-block lg:mt-10 mt-6 lg:pt-10 pt-6 border-t border-outline">
                                     <div className="flex items-center justify-between">
                                         <div className="heading5">Guest reviews</div>
-                                        <Link href={'#form-review'} className='text-button-sm px-5 py-2 rounded-lg border duration-300 hover:bg-[#f6dd49] hover:text-white hover:border-white bg-[#32548e] text-white'>Add Reviews</Link>
+                                        {/* <Link href={'#form-review'} className='text-button-sm px-5 py-2 rounded-lg border duration-300 hover:bg-[#f6dd49] hover:text-white hover:border-white bg-[#32548e] text-white'>Add Reviews</Link> */}
                                     </div>
                                   <div className="list-review lg:pt-4 pt-2">
-  {testimonialData.slice(0, 2).map((item, index) => (
+  {testimonialData.slice(6, 8).map((item, index) => (
    <div key={index} className="item flex flex-col sm:flex-row gap-5 md:mt-6 mt-4 w-full">
-  <div className="avatar w-[60px] h-[60px] rounded-full overflow-hidden flex-shrink-0">
+  {/* <div className="avatar w-[60px] h-[60px] rounded-full overflow-hidden flex-shrink-0">
   <Image
     src={item.avatar}
     width={400}
@@ -951,14 +952,14 @@ const MeranoTwo   = () => {
     priority={true}
     className="w-full h-full object-cover"
   />
-</div>
+</div> */}
 
    <div className="review pb-6 border-b border-outline w-full">
      <div className="flex items-center gap-2">
        <div className="heading5">{item.name}</div>
        <Icon.CheckCircle weight="fill" className="text-success" />
      </div>
-     <div className="date mt-1 text-variant2">{item.date}</div>
+     {/* <div className="date mt-1 text-variant2">{item.date}</div> */}
      <Rate currentRate={item.star} classname="mt-2" />
      <div
        className="body mt-2"

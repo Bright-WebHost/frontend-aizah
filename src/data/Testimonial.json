@@ -1,12 +1,12 @@
 [
     {
         "id": "1",
-        "name": "Fahad",
+        "name": "Ayaan Farooq",
         "position": "Ethical Hacker",
         "avatar": "/images/avatar/60x60.png",
         "date": "4 days ago",
         "address": "Tokyo, Japan",
-        "description": "I had an amazing stay at this beautiful studio in Damac Merano! From the moment I walked in, I was blown away by the sleek and modern aesthetic of the space. The decor was minimal yet stylish, with neutral tones and thoughtful touches that created such a calm and inviting atmosphere. The studio was incredibly well-maintained, clean, and had all the amenities I could possibly need for a comfortable stay.",
+        "description": "I had a fantastic experience staying at this 1-bedroom apartment in Business Bay. The space was clean, modern, and incredibly well-maintained. The two balconies offered beautiful views of the city—especially during sunset, which was a real highlight of my stay. The kitchen had everything I needed, and the two bathrooms made it very convenient for a group of four. The location was super central, with easy metro access and just minutes from Downtown Dubai. The host was friendly, responsive, and made check-in a breeze. Highly recommend this place for both short and long stays!",
         "images": [
             "/images/tent/900x900.png",
             "/images/tent/900x900.png",
@@ -17,12 +17,12 @@
     },
     {
         "id": "2",
-        "name": "Mohammed Raazi",
+        "name": "Zara Khan",
         "position": "6 days ago",
         "avatar": "/images/avatar/60x60.png",
         "date": "6 days ago",
         "address": "Tokyo, Japan",
-        "description": "I had an amazing stay at this 2-bedroom unit near downtown. The apartment was spotless, and the canal views were breathtaking. The hosts were exceptionally hospitable and responsive, providing helpful recommendations throughout my stay. The location was perfect for exploring the city. I highly recommend this property to anyone visiting the area.",
+        "description": "Loved my stay! The apartment was cozy, stylish, and just like the photos. Great city views from the balcony, comfy beds, and the two bathrooms were super convenient. Perfect location near Downtown. The host was helpful and responsive—would definitely stay again!",
         "images": [
             "/images/tent/900x900.png",
             "/images/tent/900x900.png",
@@ -31,14 +31,22 @@
         ],
         "star": 5
     },
+
+
+
+   
+
+
+
+
     {
         "id": "3",
-       "name": "Fahad",
+       "name": "Rehan Malik",
         "position": "Ethical Hacker",
         "avatar": "/images/avatar/60x60.png",
         "date": "4 days ago",
         "address": "Tokyo, Japan",
-        "description": "I had an amazing stay at this beautiful studio in Damac Merano! From the moment I walked in, I was blown away by the sleek and modern aesthetic of the space. The decor was minimal yet stylish, with neutral tones and thoughtful touches that created such a calm and inviting atmosphere. The studio was incredibly well-maintained, clean, and had all the amenities I could possibly need for a comfortable stay.",
+        "description": "Absolutely loved this studio! It was clean, modern, and super comfortable for my short Dubai trip. The location is amazing—just minutes from Downtown and Dubai Mall. I really appreciated the gym and pool access, and the free parking was a bonus. The kitchen had everything I needed, and the WiFi was strong for work. Perfect spot for solo travelers or a small family. Highly recommended!",
         "images": [
             "/images/tent/900x900.png",
             "/images/tent/900x900.png",
@@ -49,12 +57,12 @@
     },
     {
         "id": "4",
-        "name": "Mohammed Raazi",
+        "name": "Ameera Sultana",
         "position": "6 days ago",
         "avatar": "/images/avatar/60x60.png",
         "date": "6 days ago",
         "address": "Tokyo, Japan",
-        "description": "I had an amazing stay at this 2-bedroom unit near downtown. The apartment was spotless, and the canal views were breathtaking. The hosts were exceptionally hospitable and responsive, providing helpful recommendations throughout my stay. The location was perfect for exploring the city. I highly recommend this property to anyone visiting the area.",
+        "description": "Such a lovely studio! It was beautifully decorated, super clean, and had everything I needed—from a full kitchen to a cozy workspace. I felt safe and comfortable the whole time. The location made it easy to explore Dubai, and the pool area was perfect for relaxing in the evenings. The host was kind and responsive. I’d happily stay here again on my next visit!",
         "images": [
             "/images/tent/900x900.png",
             "/images/tent/900x900.png",
@@ -63,14 +71,19 @@
         ],
         "star": 5
     },
+
+
+
+
+
     {
         "id": "5",
-      "name": "Fahad",
+      "name": "David Thompson",
         "position": "Ethical Hacker",
         "avatar": "/images/avatar/60x60.png",
         "date": "4 days ago",
         "address": "Tokyo, Japan",
-        "description": "I had an amazing stay at this beautiful studio in Damac Merano! From the moment I walked in, I was blown away by the sleek and modern aesthetic of the space. The decor was minimal yet stylish, with neutral tones and thoughtful touches that created such a calm and inviting atmosphere. The studio was incredibly well-maintained, clean, and had all the amenities I could possibly need for a comfortable stay.",
+        "description": "Our family had an amazing stay! The apartment was stylish and had a warm, boho feel that made it really special. Both bedrooms were comfortable, and the kids loved the balcony views. The kitchen was well-equipped, and the location near Downtown and Dubai Mall was perfect. Great spot for a relaxing family trip in Dubai",
         "images": [
             "/images/tent/900x900.png",
             "/images/tent/900x900.png"
@@ -79,12 +92,44 @@
     },
     {
         "id": "6",
-        "name": "Mohammed Raazi",
+        "name": "Fatima Yousuf",
         "position": "6 days ago",
         "avatar": "/images/avatar/60x60.png",
         "date": "6 days ago",
         "address": "Tokyo, Japan",
-        "description": "I had an amazing stay at this 2-bedroom unit near downtown. The apartment was spotless, and the canal views were breathtaking. The hosts were exceptionally hospitable and responsive, providing helpful recommendations throughout my stay. The location was perfect for exploring the city. I highly recommend this property to anyone visiting the area.",
+        "description": "Such a perfect stay! The apartment was clean, cozy, and beautifully styled with a unique boho touch. Loved the peaceful vibe, stunning city views, and the easy access to Dubai’s top spots. Would definitely stay here again!",
+        "images": [
+            "/images/tent/900x900.png",
+            "/images/tent/900x900.png"
+        ],
+        "star": 5
+    },
+
+
+
+
+     {
+        "id": "7",
+      "name": "Jonathan Blake",
+        "position": "Ethical Hacker",
+        "avatar": "/images/avatar/60x60.png",
+        "date": "4 days ago",
+        "address": "Tokyo, Japan",
+        "description": "Great studio in a perfect location! It was clean, modern, and had everything I needed for a comfortable stay. The WiFi was fast, the bed was super comfy, and I loved how easy it was to get around—just a few minutes from the metro and Dubai Mall. Ideal spot for both work and sightseeing. Would definitely book again!",
+        "images": [
+            "/images/tent/900x900.png",
+            "/images/tent/900x900.png"
+        ],
+        "star": 5
+    },
+     {
+        "id": "8",
+      "name": "Ahmed Siddiqui",
+        "position": "Ethical Hacker",
+        "avatar": "/images/avatar/60x60.png",
+        "date": "4 days ago",
+        "address": "Tokyo, Japan",
+        "description": "Really enjoyed my stay here! The studio was neat, well-designed, and had everything I needed—from a full kitchen to strong WiFi. The location in Business Bay made it super easy to reach Downtown and other attractions. Perfect for a solo trip or quick business visit. Highly recommend!",
         "images": [
             "/images/tent/900x900.png",
             "/images/tent/900x900.png"
