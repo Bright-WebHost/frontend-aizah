@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { format, differenceInDays } from 'date-fns';
-import HeaderOne from '@/components/Header/HeaderOne';
+import HeaderTwo from '@/components/Header/HeaderTwo';
 import Footer from '@/components/Footer/Footer';
 import axios from 'axios';
 import { FaDownload, FaCheckCircle, FaTimes } from 'react-icons/fa';
@@ -360,7 +360,7 @@ const Checkout = () => {
 
   return (
     <>
-      <HeaderOne />
+      <HeaderTwo/>
       <div>
         <div className="max-w-12xl mx-auto px-4 py-10 flex flex-col items-center lg:items-start lg:flex-row gap-8 lg:ml-10 lg:mr-10">
           {/* Billing Address Form */}
