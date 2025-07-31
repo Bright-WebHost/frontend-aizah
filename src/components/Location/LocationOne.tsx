@@ -198,7 +198,7 @@ const LocationOne = () => {
                             className="item hover-scale"
                             // onClick={() => handleClickContinents('Europe')}
                         >
-                             <Link href='camp/merano-2906'>
+                             <Link href='/merano-2906'>
                             <div className="bg-img w-full sm:rounded-[20px] rounded-xl overflow-hidden">
                                 <Image
                                     src={'/images/allimg/bannerimg/2.png'}
