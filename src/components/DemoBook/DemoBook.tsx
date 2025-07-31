@@ -89,7 +89,7 @@ const DemoBook = () => {
     useEffect(() => {
         const fetchPriceData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/6889ded8efe926e97538bdf2`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/688a06cd56c748a9ea56a697`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch price data');
                 }

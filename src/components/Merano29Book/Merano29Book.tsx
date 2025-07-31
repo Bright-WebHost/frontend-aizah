@@ -89,7 +89,7 @@ const Merano29Book = () => {
     useEffect(() => {
         const fetchPriceData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/6889df30efe926e97538c0a9`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/688a057256c748a9ea56a4f8`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch price data');
                 }
