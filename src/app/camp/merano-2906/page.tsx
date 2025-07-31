@@ -203,16 +203,55 @@ const MeranoTwo   = () => {
                 {/* <HeaderThree /> */}
                 <div className="content-detail pt-8 pb-2 lg:ml-[30px] ">
                     <div className="container">
+                               <div className="content-detail mb-4">
+                    <div className="container">
                         <div className="flex max-lg:flex-col-reverse gap-y-10 justify-between">
                             <div className="content xl:w-3/3 lg:w-[100%] lg:pr-[15px] w-full">
 
                                 <div className="flex items-center  gap-6">
-                                    <div className="heading3">
-                                    <h1 style={{fontSize:'26px',color:'black'}}>Merano 2906</h1>
+                                    <div className="heading5">
+                                    <h2 style={{color:'black'}}> Skyline Views | Urban Oasis</h2>
+                                    </div>
+                                  
+                                </div>
+                                <div className="flex items-center  gap-6">
+                                    <div className="heading7">
+                                    <h2 style={{color:'black'}}>3 Guests 
+                                        <span
+                                         style={{
+                                         fontSize: '14px',
+                                         marginLeft: '4px',
+                                         marginRight: '4px',
+                                         display: 'inline-block'
+                                         }}
+                                         aria-hidden="true">
+                                         ·
+                                         </span>1 Bedroom<span
+                                         style={{
+                                         fontSize: '14px',
+                                         marginLeft: '4px',
+                                         marginRight: '4px',
+                                         display: 'inline-block'
+                                         }}
+                                         aria-hidden="true">
+                                         ·
+                                         </span>1 Bed
+                                         <span
+                                         style={{
+                                         fontSize: '14px',
+                                         marginLeft: '4px',
+                                         marginRight: '4px',
+                                         display: 'inline-block'
+                                         }}
+                                         aria-hidden="true">
+                                         ·
+                                         </span>  1 Bathrooms</h2>
                                     </div>
                                   
                                 </div>
                                 
+                            </div>
+                            </div>
                             </div>
                             </div>
                             </div>
@@ -488,7 +527,7 @@ const MeranoTwo   = () => {
                         <div className="flex max-lg:flex-col-reverse gap-y-10 justify-between">
                             <div className="content xl:w-2/3 lg:w-[60%] lg:pr-[15px] w-full">
 
-                            <div className="content-detail mb-4">
+                            {/* <div className="content-detail mb-4">
                     <div className="container">
                         <div className="flex max-lg:flex-col-reverse gap-y-10 justify-between">
                             <div className="content xl:w-3/3 lg:w-[100%] lg:pr-[15px] w-full">
@@ -538,7 +577,7 @@ const MeranoTwo   = () => {
                             </div>
                             </div>
                             </div>
-                            </div>
+                            </div> */}
                                 {/* <div className="flex items-center justify-between gap-6">
                                     <div className="heading3">{tentMain.name}</div>
                                     <div className="share w-12 h-12 rounded-full bg-white border border-outline flex-shrink-0 flex items-center justify-center cursor-pointer duration-300 hover:bg-black hover:text-white">
@@ -555,7 +594,7 @@ const MeranoTwo   = () => {
 
 
 
-<div className="content-detail border-t border-outline pt-2">
+<div className="content-detail  pt-2">
                     <div className="container">
                         <div className="flex max-lg:flex-col-reverse gap-y-10 justify-between">
                             <div className="content xl:w-3/3 lg:w-[100%] lg:pr-[15px] w-full">

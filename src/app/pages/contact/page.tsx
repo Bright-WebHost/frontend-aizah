@@ -7,11 +7,12 @@ import * as Icon from "phosphor-react";
 import HeaderOne from '@/components/Header/HeaderOne'
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb'
 import Footer from '@/components/Footer/Footer'
+import HeaderTwo from '@/components/Header/HeaderTwo';
 
 const Contact = () => {
     return (
         <>
-            <HeaderOne />
+            <HeaderTwo />
             <Breadcrumb img='/images/allimg/banners.webp' heading='Contact Us' subHeading='' />
             <div className='contact-us lg:pt-20 md:pt-14 pt-10'>
                 <div className="container">

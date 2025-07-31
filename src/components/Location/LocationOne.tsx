@@ -123,15 +123,15 @@ const LocationOne = () => {
                                     className='w-full'
                                 />
                             </div>
-                            <div className="name heading5 sm:mt-5 mt-3">Merano 1710</div>
+                            <div className="name heading6 sm:mt-5 mt-3 ">Damac - Chic 1BHK Apartment</div>
                             <div className='flex  items-center  gap-6'>
                             <div className="flex items-center gap-3">
-    <span className="fi fi-rr-users  text-[20px] text-[#32548e]"></span>
-    <div className="body2">4 Guests</div>
+    <span className="fi fi-rr-users  text-[18px] text-[#32548e]"></span>
+    <div className="body2 text-[18px]">4 Guests</div>
   </div>
                             <div className="flex items-center gap-3">
-    <span className="fi fi-rr-bed  text-[20px] text-[#32548e]"></span>
-    <div className="body2">1 Room</div>
+    <span className="fi fi-rr-bed  text-[18px] text-[#32548e]"></span>
+    <div className="body2 text-[18px]">1 Room</div>
   </div>
   </div>
                             </Link>
@@ -152,15 +152,15 @@ const LocationOne = () => {
                                 />
                             </div>
                           
-                            <div className="name heading5 sm:mt-5 mt-3">Majestine 618 </div>
+                            <div className="name heading6 sm:mt-5 mt-3">Elegant Stay Near Dubai Mall </div>
                             <div className='flex  items-center  gap-6'>
                             <div className="flex items-center gap-3">
-    <span className="fi fi-rr-users  text-[20px] text-[#32548e]"></span>
-    <div className="body2">2 Guests</div>
+    <span className="fi fi-rr-users  text-[18px] text-[#32548e]"></span>
+    <div className="body2 text-[18px]">2 Guests</div>
   </div>
                             <div className="flex items-center gap-3">
-    <span className="fi fi-rr-bed  text-[20px] text-[#32548e]"></span>
-    <div className="body2">1 Room</div>
+    <span className="fi fi-rr-bed  text-[18px] text-[#32548e]"></span>
+    <div className="body2 text-[18px]">1 Room</div>
   </div>
   </div>
                             </Link>
@@ -181,15 +181,15 @@ const LocationOne = () => {
                                     className='w-full'
                                 />
                             </div>
-                            <div className="name heading5 sm:mt-5 mt-3">Reva 1811</div>
+                            <div className="name heading6 sm:mt-5 mt-3">Boho-Chic Living in Business Bay</div>
                             <div className='flex  items-center  gap-6'>
                             <div className="flex items-center gap-3">
-    <span className="fi fi-rr-users  text-[20px] text-[#32548e]"></span>
-    <div className="body2">2 Guests</div>
+    <span className="fi fi-rr-users  text-[18px] text-[#32548e]"></span>
+    <div className="body2 text-[18px]">2 Guests</div>
   </div>
                             <div className="flex items-center gap-3">
-    <span className="fi fi-rr-bed  text-[20px] text-[#32548e]"></span>
-    <div className="body2">2 Room</div>
+    <span className="fi fi-rr-bed  text-[18px] text-[#32548e]"></span>
+    <div className="body2 text-[18px]">2 Room</div>
   </div>
   </div>
                             </Link>
@@ -209,15 +209,15 @@ const LocationOne = () => {
                                     className='w-full'
                                 />
                             </div>
-                            <div className="name heading5 sm:mt-5 mt-3"> Merano 2906</div>
+                            <div className="name heading6 sm:mt-5 mt-3"> Skyline Views | Urban Oasis</div>
                             <div className='flex  items-center  gap-6'>
                             <div className="flex items-center gap-3">
-    <span className="fi fi-rr-users  text-[20px] text-[#32548e]"></span>
-    <div className="body2">3 Guests</div>
+    <span className="fi fi-rr-users  text-[18px] text-[#32548e]"></span>
+    <div className="body2 text-[18px]">3 Guests</div>
   </div>
                             <div className="flex items-center gap-3">
-    <span className="fi fi-rr-bed  text-[20px] text-[#32548e]"></span>
-    <div className="body2">1 Room</div>
+    <span className="fi fi-rr-bed text-[18px] text-[#32548e]"></span>
+    <div className="body2 text-[18px]">1 Room</div>
   </div>
   </div>
                             </Link>

@@ -101,10 +101,10 @@ const Footer = () => {
                                 </div>
                                 <div className="item">
                                     <div className="text-title pb-3 text-[#f1dd38]">Rooms</div>
-                                    <Link href={'/camp/merano'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Merano 1710 </Link>
-                                    <Link href={'/camp/majestine'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Majestine 618</Link>
-                                    <Link href={'/camp/reva'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Reva 1811</Link>
-                                    <Link href={'/camp/merano-2906'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Merano 2906</Link>
+                                    <Link href={'/camp/merano'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Damac - Chic 1BHK Apartment </Link>
+                                    <Link href={'/camp/majestine'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Elegant Stay Near Dubai Mall</Link>
+                                    <Link href={'/camp/reva'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Boho-Chic Living in Business Bay</Link>
+                                    <Link href={'/camp/merano-2906'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Skyline Views | Urban Oasis</Link>
                                     {/* <Link href={'/#'} className="caption1 text-black  has-line block w-fit whitespace-nowrap">Room</Link> */}
                                   
                                 </div>
