@@ -34,7 +34,7 @@ interface GuestType {
     pet: number;
 }
 
-const majestine  = () => {
+const Majestine   = () => {
     const params = useSearchParams()
     let tentId = params.get('id')
     const [viewMoreDesc, setViewMoreDesc] = useState<boolean>(false)
@@ -1339,4 +1339,4 @@ const majestine  = () => {
         </>
     )
 }
-export default majestine 
+export default Majestine  
