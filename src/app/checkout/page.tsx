@@ -3,10 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { format, differenceInDays } from 'date-fns';
-import HeaderTwo from '@/components/Header/HeaderTwo';
+// import HeaderTwo from '@/components/Header/HeaderTwo';
 import Footer from '@/components/Footer/Footer';
 import axios from 'axios';
 import { FaDownload, FaCheckCircle, FaTimes } from 'react-icons/fa';
+import HeaderTwo from '@/components/Header/HeaderTwo';
 
 const Checkout = () => {
   const router = useRouter();
@@ -531,7 +532,9 @@ const Checkout = () => {
               </div>
              
               <div className="flex justify-between mb-4">
-                <p className="font-semibold">Tourism Fee</p>
+                <p className="font-semibold">Tourism Fee
+                  <br/><span className='text-[12px]'>( {totalNights} night X 20 AED)</span>
+                </p>
                 <p>AED {tourismFee}</p>
               </div>
 
