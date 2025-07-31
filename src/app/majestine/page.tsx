@@ -4,7 +4,6 @@ import React, { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import * as Icon from 'phosphor-react'
-import HeaderOne from '@/components/Header/HeaderOne'
 import HeaderTwo from '@/components/Header/HeaderTwo'
 import Footer from '@/components/Footer/Footer'
 import tentData from '@/data/Tent.json'
@@ -25,7 +24,8 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import Rate from '@/components/Other/Rate'
 import StickyBox from 'react-sticky-box';
 import HeaderThree from '@/components/Header/HeaderThree'
-import DemoBook from '@/components/DemoBook/DemoBook'
+import DemoBook from '@/components/DemoBook/DemoBook';
+import MajestineBook from '@/components/MajestineBook/MajestineBook';
 
 interface GuestType {
     adult: number;
@@ -34,7 +34,7 @@ interface GuestType {
     pet: number;
 }
 
-const merano  = () => {
+const majestine  = () => {
     const params = useSearchParams()
     let tentId = params.get('id')
     const [viewMoreDesc, setViewMoreDesc] = useState<boolean>(false)
@@ -173,12 +173,14 @@ const merano  = () => {
     const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
     const images = [
-      { src: "/images/allimg/rooms/Merano/5.png", alt: "Image 1" },
-      { src: "/images/allimg/rooms/Merano/2.png", alt: "Image 2" },
-      { src: "/images/allimg/rooms/Merano/3.png", alt: "Image 3" },
-      { src: "/images/allimg/rooms/Merano/4.png", alt: "Image 4" },
-      { src: "/images/allimg/rooms/Merano/1.png", alt: "Image 5" },
-      { src: "/images/allimg/rooms/Merano/6.png", alt: "Image 5" },
+      { src: "/images/allimg/rooms/Majestine/3.png", alt: "Image 1" },
+      { src: "/images/allimg/rooms/Majestine/8.png", alt: "Image 2" },
+      { src: "/images/allimg/rooms/Majestine/2.png", alt: "Image 3" },
+      { src: "/images/allimg/rooms/Majestine/4.png", alt: "Image 4" },
+      { src: "/images/allimg/rooms/Majestine/5.png", alt: "Image 5" },
+      { src: "/images/allimg/rooms/Majestine/1.png", alt: "Image 6" },   
+      { src: "/images/allimg/rooms/Majestine/7.png", alt: "Image 7" },
+      { src: "/images/allimg/rooms/Majestine/6.png", alt: "Image 8" },
     ];
   
     const handlePrev = () => {
@@ -196,26 +198,26 @@ const merano  = () => {
     const closeModal = () => setCurrentIndex(null);
     return (
         <>
-           <HeaderTwo/>
+         <HeaderTwo />
             <div className='ten-detail  lg:ml-10 lg:mr-10' >
-                {/* <HeaderOne /> */}
-             
+               
                 {/* <HeaderThree /> */}
                 <div className="content-detail pt-8 pb-2 lg:ml-[30px] ">
-                     <div className="content-detail">
+                    <div className="container">
+                         <div className="content-detail mb-4">
                     <div className="container">
                         <div className="flex max-lg:flex-col-reverse gap-y-10 justify-between">
                             <div className="content xl:w-3/3 lg:w-[100%] lg:pr-[15px] w-full">
 
                                 <div className="flex items-center  gap-6">
                                     <div className="heading5">
-                                    <h2 style={{color:'black'}}>Chic 1BHK Apartment in Business Bay – DAMAC | Sleeps 4</h2>
+                                    <h2 style={{color:'black'}}> Elegant Stay Steps from Dubai Mall | Sleeps 3 | Luxury Amenities</h2>
                                     </div>
                                   
                                 </div>
                                 <div className="flex items-center  gap-6">
                                     <div className="heading7">
-                                    <h2 style={{color:'black'}}>4 Guests 
+                                    <h2 style={{color:'black'}}>2 Guests 
                                         <span
                                          style={{
                                          fontSize: '14px',
@@ -244,7 +246,7 @@ const merano  = () => {
                                          }}
                                          aria-hidden="true">
                                          ·
-                                         </span>  2 Bathrooms</h2>
+                                         </span>  1 Bathrooms</h2>
                                     </div>
                                   
                                 </div>
@@ -253,19 +255,7 @@ const merano  = () => {
                             </div>
                             </div>
                             </div>
-                    <div className="container ">    
-                        <div className="flex max-lg:flex-col-reverse gap-y-10 justify-between ">
-                            <div className="content xl:w-3/3 lg:w-[100%] lg:pr-[15px] w-full">
 
-                                {/* <div className="flex items-center  gap-6">
-                                    <div className="heading3">
-                                    <h1 style={{fontSize:'26px',color:'black'}}>Merano 1710 </h1>
-                                    </div>
-                                  
-                                </div> */}
-                                
-                            </div>
-                            </div>
                             </div>
                             </div>
 
@@ -383,14 +373,14 @@ const merano  = () => {
                           borderTopLeftRadius: index === 0 ? "20px" : "",
                           borderBottomLeftRadius: index === 0 ? "20px" : "",
                           borderTopRightRadius: index === 2 ? "20px" : "",
-                          borderBottomRightRadius: (index >= 4 && index <= 13) ? "20px" : "",
-
+                       borderBottomRightRadius: (index >= 4 && index <= 7) ? "20px" : "",
+                        content:'hey'
                         }}
                       />
+                    
                     </div>
                   ))}
                 </div>
-
 
 
 <div className="hidden sm:flex justify-end -mt-[50px] mr-[10px]">
@@ -404,6 +394,11 @@ const merano  = () => {
     </button>
   </div>
 </div>
+
+
+
+
+
                 {/* Modal */}
                 {currentIndex !== null && (
   <div
@@ -494,9 +489,11 @@ const merano  = () => {
         className="w-full h-60 object-cover rounded-lg cursor-pointer"
       />
     </div>
+    
   ))}
+ 
 </div>
-<div className="md:hidden flex justify-end -mt-[40px] mr-[10px]  ">
+ <div className="md:hidden flex justify-end -mt-[40px] mr-[10px]  ">
   <div className="inline-block bg-white border border-g ray-300 rounded-[10px] px-3 py-1">
     <button className="flex items-center gap-2 text-[#32548e] text-[12px]"   onClick={() => setCurrentIndex(0)}>
       <span className="fi fi-rr-grip-dots text-[18px]"></span>
@@ -546,13 +543,13 @@ const merano  = () => {
 
                                 <div className="flex items-center  gap-6">
                                     <div className="heading5">
-                                    <h2 style={{color:'black'}}>Chic 1BHK Apartment in Business Bay – DAMAC | Sleeps 4</h2>
+                                    <h2 style={{color:'black'}}> Elegant Stay Steps from Dubai Mall | Sleeps 3 | Luxury Amenities</h2>
                                     </div>
                                   
                                 </div>
                                 <div className="flex items-center  gap-6">
                                     <div className="heading7">
-                                    <h2 style={{color:'black'}}>4 Guests 
+                                    <h2 style={{color:'black'}}>2 Guests 
                                         <span
                                          style={{
                                          fontSize: '14px',
@@ -581,7 +578,7 @@ const merano  = () => {
                                          }}
                                          aria-hidden="true">
                                          ·
-                                         </span>  2 Bathrooms</h2>
+                                         </span>  1 Bathrooms</h2>
                                     </div>
                                   
                                 </div>
@@ -606,7 +603,7 @@ const merano  = () => {
 
 
 
-<div className="content-detail   pt-2">
+<div className="content-detail  pt-2">
                     <div className="container">
                         <div className="flex max-lg:flex-col-reverse gap-y-10 justify-between">
                             <div className="content xl:w-3/3 lg:w-[100%] lg:pr-[15px] w-full">
@@ -614,13 +611,21 @@ const merano  = () => {
                                 <div className="flex items-center  gap-6 pb-4">
                                     <div className="heading6">
                                     <div className="heading6">Description</div>
-                                    <div className="body2 text-variant mt-3" >Experience modern luxury in the heart of Dubai with our chic and spacious 1-bedroom apartment in Business Bay. Designed for both leisure and business travelers, this fully furnished home comfortably accommodates up to 4 guests with a plush bedroom and additional sofa beds in the living area.</div>
-                                    <div className="body2 text-variant mt-3" >Whether you’re in town for a few days or planning an extended stay, you’ll love the two stylish washrooms, a fully equipped kitchen for home-cooked meals, and two private balconies with stunning city views—perfect for morning coffee or unwinding at sunset.</div>
-                                    <div className="body2 text-variant mt-3" >Located just minutes from Downtown Dubai with easy access to the metro, enjoy seamless connectivity to the city’s top attractions. After a day out, return to a cozy and elegant living space, complete with modern amenities and thoughtful touches to make your stay unforgettable.
+                                    <div className="body2 text-variant mt-3" >Experience unparalleled luxury in this sophisticated studio located in the heart of Business Bay — just minutes from Dubai Mall and Downtown. Perfectly designed for both comfort and style, this urban retreat accommodates up to 3 guests and offers the ideal blend of relaxation and convenience for your Dubai getaway.
 </div>
-                                    {/* <div className="body2 text-variant mt-3 border-t border-outline "  >With a spacious layout, upscale ambiance, and convenient walking distance to the metro station, this residence perfectly blends luxury and accessibility. 
+                                    {/* <div className="heading6 mt-6">The space</div> */}
+                                    <div className="body2 text-variant mt-3"  >Enjoy exclusive access to premium amenities, including:
                                     </div>
-                                    <div className="body2 text-variant mt-3 border-t border-outline "  >You’ll truly appreciate the area—an excellent choice you won’t regret.</div> */}
+                                     <div className="list-benefit mt-5">
+                                <ul>
+                                    <li className='list-disc body2 ml-5'>Sparkling swimming pool</li>
+                                    <li className='list-disc body2 ml-5 mt-3'> Fully equipped gym</li>
+                                    <li className='list-disc body2 ml-5 mt-3'>Kids’ play area</li>
+                                    <li className='list-disc body2 ml-5 mt-3'>Outdoor BBQ and dining area</li>
+                                    <li className='list-disc body2 ml-5 mt-3'> Free on-site parking</li>
+                                </ul>
+                            </div> 
+                                    <div className="body2 text-variant mt-3 border-t border-outline "  >Inside, the space features a sleek, modern design with a fully equipped kitchen, high-speed WiFi, smart TV, washing machine, and a dedicated workspace — making it ideal for both leisure and business travelers.</div>
                                     </div>
                                   
                                 </div>
@@ -630,7 +635,7 @@ const merano  = () => {
                             </div>
                             </div>
                             </div>
-
+<div className="heading6 text-center">Check-in: <span className='text-[#32548e] heading6'>3:00 PM </span>| Check-out:<span className='text-[#32548e] heading6'> 11:00 AM</span> </div>
 
 
 
@@ -698,33 +703,50 @@ const merano  = () => {
 
 
                                 
-<div className="heading6 text-center">Check-in: <span className='text-[#32548e] heading6'>3:00 PM </span>| Check-out:<span className='text-[#32548e] heading6'> 11:00 AM</span> </div>
+
 
 <div className="content-detail  border-t border-outline pt-4 pb-4">
                     <div className="container">
-                        
                         <div className="flex max-lg:flex-col-reverse gap-y-10 justify-between">
                             <div className="content xl:w-3/3 lg:w-[100%] lg:pr-[15px] w-full">
 
                                 <div className="flex items-center  gap-6">
-                                    
                                     <div className="heading5">
-                                        
                                     <div className="heading6">Amenities and features</div>
                                     </div>
                                   
                                 </div>
-                                <div className="list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-4 mt-4">
+                        
+                        
+                        
+                                <div className="list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-4">
+
+
+
+
+                                    {/* AC */}
+  <div className="flex items-center gap-3">
+    <i className="fi fi-rr-air-conditioner text-[24px] text-[#32548e]"></i>
+    <div className="body2">Air conditioning</div>
+  </div>
   {/* Kitchen */}
   <div className="flex items-center gap-3">
     <span className="fi fi-rr-restaurant text-[24px] text-[#32548e]"></span>
-    <div className="body2">Fully equipped kitchen & kitchenette</div>
+    <div className="body2">Fully Equipped Kitchen</div>
+  </div>
+  <div className="flex items-center gap-3">
+    <span className="fi fi-rr-grill text-[24px] text-[#32548e]"></span>
+    <div className="body2">BBQ Grill</div>
   </div>
 
   {/* Pool */}
   <div className="flex items-center gap-3">
     <span className="fi fi-rr-swimmer text-[24px] text-[#32548e]"></span>
-    <div className="body2">Swimming pool & beach access</div>
+    <div className="body2">Pool</div>
+  </div>
+  <div className="flex items-center gap-3">
+    <span className="fi fi-rr-heat  text-[24px] text-[#32548e]"></span>
+    <div className="body2">Hot Water</div>
   </div>
 
   {/* Wifi */}
@@ -736,7 +758,7 @@ const merano  = () => {
   {/* Parking */}
   <div className="flex items-center gap-3">
     <i className="fi fi-rr-parking-circle text-[24px] text-[#32548e]"></i>
-    <div className="body2">Free parking on premises</div>
+    <div className="body2">Parking</div>
   </div>
 
   {/* TV */}
@@ -745,11 +767,7 @@ const merano  = () => {
     <div className="body2">TV</div>
   </div>
 
-  {/* AC */}
-  <div className="flex items-center gap-3">
-    <i className="fi fi-rr-air-conditioner text-[24px] text-[#32548e]"></i>
-    <div className="body2">Air conditioning</div>
-  </div>
+  
 
   {/* First Aid */}
   <div className="flex items-center gap-3">
@@ -759,15 +777,6 @@ const merano  = () => {
   <div className="flex items-center gap-3">
     <i className="fi fi-rr-house-laptop text-[24px] text-[#32548e]"></i>
     <div className="body2">Dedicated workspace</div>
-  </div>
-  <div className="flex items-center gap-3">
-      <i className="fi fi-rr-chart-area text-[24px] text-[#32548e]"></i>
-    <div className="body2">Outdoor playing areas</div>
-  </div>
-  <div className="flex items-center gap-3">
-      <i className="fi fi-rr-database text-[24px] text-[#32548e]"></i>
-    <div className="body2">Iron & clothes storage
-</div>
   </div>
 </div>
 
@@ -980,7 +989,7 @@ const merano  = () => {
                                         {/* <Link href={'#form-review'} className='text-button-sm px-5 py-2 rounded-lg border duration-300 hover:bg-[#f6dd49] hover:text-white hover:border-white bg-[#32548e] text-white'>Add Reviews</Link> */}
                                     </div>
                                   <div className="list-review lg:pt-4 pt-2">
-  {testimonialData.slice(0, 2).map((item, index) => (
+  {testimonialData.slice(2, 4).map((item, index) => (
    <div key={index} className="item flex flex-col sm:flex-row gap-5 md:mt-6 mt-4 w-full">
   {/* <div className="avatar w-[60px] h-[60px] rounded-full overflow-hidden flex-shrink-0">
   <Image
@@ -1051,8 +1060,9 @@ const merano  = () => {
                             
                             </div>
 
-
-                            <DemoBook/>
+<MajestineBook/>
+                            {/* <DemoBook/> */}
+                           
                             {/* <div className="sidebar xl:w-1/3 lg:w-[40%] lg:pl-[45px] w-full">
                                 <StickyBox offsetTop={100} offsetBottom={20} >
                                     <div className="reservation bg-surface p-6 rounded-md"  style={{boxShadow:' rgba(20, 20, 20, 0.32) 0px 6px 16px',border:'1px solid rgb(221, 221, 221)',borderRadius:'20px'}}>
@@ -1309,7 +1319,7 @@ const merano  = () => {
         <div className="relative">
           <iframe
             className="w-full h-[360px] rounded-lg"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.4045427290444!2d55.2603221!3d25.184828099999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69d05fc5c007%3A0x2244cfc2de3b602d!2sDAMAC%20MERANO%20TOWER%2CBusiness%20Bay!5e1!3m2!1sen!2sin!4v1753678222357!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.3583467466933!2d55.282055!3d25.186456999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f683a915fb0a3%3A0x914e180cde357c14!2sDAMAC%20Majestine!5e1!3m2!1sen!2sin!4v1753680308161!5m2!1sen!2sin"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -1329,4 +1339,4 @@ const merano  = () => {
         </>
     )
 }
-export default merano 
+export default majestine 

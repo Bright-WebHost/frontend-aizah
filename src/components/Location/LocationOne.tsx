@@ -112,7 +112,7 @@ const LocationOne = () => {
                             className="item hover-scale"
                             // onClick={() => handleClickContinents('Africa')}
                         >
-                             <Link href='merano'>
+                             <Link href='/merano'>
                             <div className="bg-img w-full sm:rounded-[20px] rounded-xl overflow-hidden">
                                 <Image
                                     src={'/images/allimg/bannerimg/1.png'}
@@ -140,7 +140,7 @@ const LocationOne = () => {
                             className="item hover-scale"
                             // onClick={() => handleClickContinents('Asia')}
                         >
-                            <Link href='camp/majestine'>
+                            <Link href='/majestine'>
                             <div className="bg-img w-full sm:rounded-[20px] rounded-xl overflow-hidden">
                                 <Image
                                     src={'/images/allimg/bannerimg/3.png'}
