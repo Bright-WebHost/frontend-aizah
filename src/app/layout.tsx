@@ -21,6 +21,14 @@ export default function RootLayout({
     <WishlistProvider>
       <html lang="en">
         <head>
+           <link
+          rel="stylesheet"
+          href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+        />
           {/* ✅ Flaticon CSS CDN */}
           <link
             rel="stylesheet"
