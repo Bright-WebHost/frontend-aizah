@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@react-google-maps/api": "^2.19.2",
-    "@stripe/stripe-js": "^7.0.0",
+    "@stripe/react-stripe-js": "^3.9.0",
+    "@stripe/stripe-js": "^7.8.0",
     "@types/react-leaflet": "^3.0.0",
     "axios": "^1.9.0",
     "dotenv": "^17.0.1",
