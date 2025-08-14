@@ -61,7 +61,7 @@ const StripeCardForm: React.FC<StripeCardFormProps> = ({
     setLoading(true);
 
     try {
-      const paymentIntentResponse = await fetch(`http://localhost:7000/api/payment`, {
+      const paymentIntentResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/payment`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -117,7 +117,7 @@ const StripeCardForm: React.FC<StripeCardFormProps> = ({
 
   const sendBookingData = async (paymentId: string) => {
     try {
-      const response = await fetch(`http://localhost:7000/api/checkout`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/checkout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -215,7 +215,7 @@ const Checkout = () => {
   useEffect(() => {
     const fetchApiKey = async () => {
       try {
-        const response = await axios.get(`http://localhost:7000/api/keyview`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/keyview`);
         const keyData = response.data?.data?.[0];
         if (keyData) {
           setStripeApiKey(keyData.key);
@@ -583,7 +583,7 @@ const Checkout = () => {
               <div className="flex justify-center gap-4">
                 <button
                   onClick={downloadBookingDetails}
-                  className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+                  className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-black px-4 py-2 rounded"
                 >
                   <FaDownload /> Download Receipt
                 </button>
