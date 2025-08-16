@@ -89,7 +89,7 @@ const DemoBook = () => {
     useEffect(() => {
         const fetchPriceData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/688a06cd56c748a9ea56a697`);
+                const response = await fetch(`https://api.aizahhospitality.com/api/priceView/688a06cd56c748a9ea56a697`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch price data');
                 }
@@ -112,7 +112,7 @@ const DemoBook = () => {
     // Fetch booked dates from backend and filter for "merano" room only
     const fetchBookedDates = useCallback(async () => {
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/chekoutview`);
+            const response = await fetch(`https://api.aizahhospitality.com/api/chekoutview`);
             if (!response.ok) {
                 throw new Error('Failed to fetch booked dates');
             }
