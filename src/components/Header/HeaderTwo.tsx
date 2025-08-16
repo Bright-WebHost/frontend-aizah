@@ -298,7 +298,7 @@ const HeaderTwo = () => {
                             <Icon.CaretDown className='icon text-base right-0' />
                         </div> */}
                         <div className="menu-mobile-icon lg:hidden  flex items-center ml-4" onClick={() => setOpenMenuMobile(true)}>
-                            <Icon.List className='sm:text-xl text-2xl text-black' weight='bold' />
+                            <Icon.List className='sm:text-xl text-2xl text-white' weight='bold' />
                         </div>
                     </div>
                 </div>
