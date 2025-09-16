@@ -89,7 +89,8 @@ const RevaBook = () => {
     useEffect(() => {
         const fetchPriceData = async () => {
             try {
-                const response = await fetch(`https://api.aizahhospitality.com/api/priceView/68c910e3b6f72a0a8a5b9bea`);
+                
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/priceView/68c910e3b6f72a0a8a5b9bea`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch price data');
                 }
@@ -112,7 +113,7 @@ const RevaBook = () => {
     // Fetch booked dates from backend and filter for "merano" room only
     const fetchBookedDates = useCallback(async () => {
         try {
-            const response = await fetch(`https://api.aizahhospitality.com/api/chekoutview`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/chekoutview`);
             if (!response.ok) {
                 throw new Error('Failed to fetch booked dates');
             }
