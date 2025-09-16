@@ -89,7 +89,7 @@ const RevaBook = () => {
     useEffect(() => {
         const fetchPriceData = async () => {
             try {
-                const response = await fetch(`https://api.aizahhospitality.com/api/priceView/688a068256c748a9ea56a60c`);
+                const response = await fetch(`https://api.aizahhospitality.com/api/priceView/68c910e3b6f72a0a8a5b9bea`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch price data');
                 }
