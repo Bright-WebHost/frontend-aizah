@@ -61,7 +61,7 @@ const StripeCardForm: React.FC<StripeCardFormProps> = ({
     setLoading(true);
 
     try {
-      const paymentIntentResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/payment`, {
+      const paymentIntentResponse = await fetch(`https://api.aizahhospitality.com/api/payment`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -117,7 +117,7 @@ const StripeCardForm: React.FC<StripeCardFormProps> = ({
 
   const sendBookingData = async (paymentId: string) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/checkout`, {
+      const response = await fetch(`https://api.aizahhospitality.com/api/checkout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -215,7 +215,7 @@ const Checkout = () => {
   useEffect(() => {
     const fetchApiKey = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/keyview`);
+        const response = await axios.get(`https://api.aizahhospitality.com/api/keyview`);
         const keyData = response.data?.data?.[0];
         if (keyData) {
           setStripeApiKey(keyData.key);
@@ -237,7 +237,7 @@ const Checkout = () => {
 
     setLoading(true);
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/checkoutSubmit`, {
+      const response = await fetch(`https://api.aizahhospitality.com/api/checkoutSubmit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
