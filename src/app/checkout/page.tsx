@@ -347,7 +347,7 @@ const Checkout = () => {
     router.push('/');
   };
 
-  const stripePromise = loadStripe(stripeApiKey || 'pk_test_51Qyn3F01CXKRYtIfNzPhuOf7eJhRriv8IqmCOwsbUQLS0s3zTh1py5MzYGzYqIdi5HFi5CUIl98wUyx0fi7jXC4v004wrz49Vj');
+  const stripePromise = loadStripe(stripeApiKey || 'pk_live_51RsKvoGm72gLB01Pvp8hyWY3NuJemlwippNXOCfa1nT0P8ruRlYTpp50K1fwukRXZm2nWB1QfkUhJaAIntjUUM3i00oBwRCSu1');
 
   return (
     <>
