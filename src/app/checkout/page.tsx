@@ -210,7 +210,7 @@ const Checkout = () => {
 
   const tourismFee = totalNights * 20;
   const roomTotal = parseInt(roomPrice, 10) * totalNights;
-  const totalPrice = roomTotal ;
+  const totalPrice = roomTotal + tourismFee;
 
   useEffect(() => {
     const fetchApiKey = async () => {
@@ -328,7 +328,7 @@ const Checkout = () => {
       if (paymentMethod === 'card') {
         doc.text(`Payment ID: ${paymentID}`, 20, 200);
       }
-      // doc.text(`Tourism Fee: AED ${tourismFee}`, 20, 220);
+      doc.text(`Tourism Fee: AED ${tourismFee}`, 20, 220);
       doc.text(`Total Amount: AED ${totalPrice}`, 20, 230);
 
       doc.setFontSize(12);
@@ -510,14 +510,14 @@ const Checkout = () => {
             <p className="font-semibold">Nights</p>
             <p>{totalNights}</p>
           </div>
-          {/* <div className="flex justify-between mb-4">
+          <div className="flex justify-between mb-4">
             <p className="font-semibold">
               Tourism Fee
               <br />
               <span className="text-[12px]">({totalNights} night X 20 AED)</span>
             </p>
             <p>AED {tourismFee}</p>
-          </div> */}
+          </div>
           <div className="flex justify-between mb-4 border-b pb-6">
             <p className="font-semibold">Room Price</p>
             <p>AED {roomTotal}</p>
@@ -567,9 +567,9 @@ const Checkout = () => {
                 <p>
                   <span className="font-medium">Room Price:</span> AED {roomTotal}
                 </p>
-                {/* <p>
+                <p>
                   <span className="font-medium">Tourism Fee:</span> AED {tourismFee}
-                </p> */}
+                </p>
                 <p>
                   <span className="font-medium">Total Amount:</span> AED {totalPrice}
                 </p>
