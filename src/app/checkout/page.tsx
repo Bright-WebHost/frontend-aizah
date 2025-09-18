@@ -210,7 +210,7 @@ const Checkout = () => {
 
   const tourismFee = totalNights * 20;
   const roomTotal = parseInt(roomPrice, 10) * totalNights;
-  const totalPrice = roomTotal + tourismFee;
+  const totalPrice = roomTotal ;
 
   useEffect(() => {
     const fetchApiKey = async () => {
