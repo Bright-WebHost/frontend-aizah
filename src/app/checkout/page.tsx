@@ -567,9 +567,9 @@ const Checkout = () => {
                 <p>
                   <span className="font-medium">Room Price:</span> AED {roomTotal}
                 </p>
-                <p>
+                {/* <p>
                   <span className="font-medium">Tourism Fee:</span> AED {tourismFee}
-                </p>
+                </p> */}
                 <p>
                   <span className="font-medium">Total Amount:</span> AED {totalPrice}
                 </p>
