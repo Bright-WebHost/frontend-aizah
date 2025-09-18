@@ -328,7 +328,7 @@ const Checkout = () => {
       if (paymentMethod === 'card') {
         doc.text(`Payment ID: ${paymentID}`, 20, 200);
       }
-      doc.text(`Tourism Fee: AED ${tourismFee}`, 20, 220);
+      // doc.text(`Tourism Fee: AED ${tourismFee}`, 20, 220);
       doc.text(`Total Amount: AED ${totalPrice}`, 20, 230);
 
       doc.setFontSize(12);
