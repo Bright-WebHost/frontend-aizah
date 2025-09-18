@@ -510,14 +510,14 @@ const Checkout = () => {
             <p className="font-semibold">Nights</p>
             <p>{totalNights}</p>
           </div>
-          <div className="flex justify-between mb-4">
+          {/* <div className="flex justify-between mb-4">
             <p className="font-semibold">
               Tourism Fee
               <br />
               <span className="text-[12px]">({totalNights} night X 20 AED)</span>
             </p>
             <p>AED {tourismFee}</p>
-          </div>
+          </div> */}
           <div className="flex justify-between mb-4 border-b pb-6">
             <p className="font-semibold">Room Price</p>
             <p>AED {roomTotal}</p>
