@@ -507,14 +507,14 @@ const PenthouseParisianBook = () => {
                                         {day.date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' })}
                                     </div>
                                     <div className="text-button" style={{fontSize: '12px', fontWeight: 'bolder'}}>
-                                        AED {day.price}
+                                        ₹ {day.price}
                                     </div>
                                 </div>
                             ))}
                         </div>
                         <div className="total-block mt-5 pt-5 border-t border-outline flex items-center justify-between">
                             <div className="heading6">Total Price</div>
-                            <div className="heading5">AED {totalBeforeTaxes}</div>
+                            <div className="heading5"> ₹ {totalBeforeTaxes}</div>
                         </div>
                         <div className="button-main w-full text-center mt-5">
                             <button onClick={handleBookNow}>Book Now</button>

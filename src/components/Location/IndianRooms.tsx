@@ -143,7 +143,7 @@ const IndianRooms = () => {
                             <Link href='/PenthouseParisian'>
                             <div className="bg-img w-full sm:rounded-[20px] rounded-xl overflow-hidden">
                                 <Image
-                                    src={'/images/allimg/bannerimg/3.png'}
+                                    src={'/images/allimg/rooms/PenthouseParisian/3.webp'}                               
                                     width={3000}
                                     height={2000}
                                     alt='2.png'
@@ -173,7 +173,8 @@ const IndianRooms = () => {
                              <Link href='/FramhouseWithPool'>
                             <div className="bg-img w-full sm:rounded-[20px] rounded-xl overflow-hidden">
                                 <Image
-                                    src={'/images/allimg/bannerimg/4.png'}
+                                
+                                    src={'/images/allimg/rooms/Pool/4.png'}
                                     width={3000}
                                     height={2000}
                                     alt='3.png'
