@@ -25,7 +25,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import Rate from '@/components/Other/Rate'
 import StickyBox from 'react-sticky-box';
 import HeaderThree from '@/components/Header/HeaderThree'
-import DemoBook from '@/components/DemoBook/DemoBook'
+import FarmhouseWithPoolBook from '@/components/FarmhouseWithPoolBook/FarmhouseWithPoolBook'
 
 interface GuestType {
     adult: number;
@@ -34,7 +34,7 @@ interface GuestType {
     pet: number;
 }
 
-const Merano = () => {
+const FramhouseWithPool = () => {
     const params = useSearchParams()
     let tentId = params.get('id')
     const [viewMoreDesc, setViewMoreDesc] = useState<boolean>(false)
@@ -173,12 +173,21 @@ const Merano = () => {
     const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
     const images = [
-      { src: "/images/allimg/rooms/Merano/5.png", alt: "Image 1" },
-      { src: "/images/allimg/rooms/Merano/2.png", alt: "Image 2" },
-      { src: "/images/allimg/rooms/Merano/3.png", alt: "Image 3" },
-      { src: "/images/allimg/rooms/Merano/4.png", alt: "Image 4" },
-      { src: "/images/allimg/rooms/Merano/1.png", alt: "Image 5" },
-      { src: "/images/allimg/rooms/Merano/6.png", alt: "Image 5" },
+        
+      { src: "/images/allimg/rooms/Pool/4.png", alt: "Image 1" },
+      { src: "/images/allimg/rooms/Pool/10.png", alt: "Image 2" },
+      { src: "/images/allimg/rooms/Pool/1.png", alt: "Image 3" },
+      { src: "/images/allimg/rooms/Pool/8.png", alt: "Image 4" },
+      { src: "/images/allimg/rooms/Pool/3.png", alt: "Image 5" },
+      { src: "/images/allimg/rooms/Pool/5.png", alt: "Image 6" },
+      { src: "/images/allimg/rooms/Pool/2.png", alt: "Image 7" },
+      { src: "/images/allimg/rooms/Pool/9.png", alt: "Image 8" },
+      { src: "/images/allimg/rooms/Pool/6.png", alt: "Image 9" },
+      { src: "/images/allimg/rooms/Pool/7.png", alt: "Image 10" },
+      
+
+      
+
     ];
   
     const handlePrev = () => {
@@ -209,7 +218,7 @@ const Merano = () => {
 
                                 <div className="flex items-center  gap-6">
                                     <div className="heading5">
-                                    <h2 style={{color:'black'}}>Chic 1BHK Apartment in Business Bay – DAMAC | Sleeps 4</h2>
+                                    <h2 style={{color:'black'}}>Farmhouse with Pool </h2>
                                     </div>
                                   
                                 </div>
@@ -225,7 +234,7 @@ const Merano = () => {
                                          }}
                                          aria-hidden="true">
                                          ·
-                                         </span>1 Bedroom<span
+                                         </span>2  Bedrooms<span
                                          style={{
                                          fontSize: '14px',
                                          marginLeft: '4px',
@@ -234,7 +243,7 @@ const Merano = () => {
                                          }}
                                          aria-hidden="true">
                                          ·
-                                         </span>1 Bed
+                                         </span>2 Beds
                                          <span
                                          style={{
                                          fontSize: '14px',
@@ -456,8 +465,8 @@ const Merano = () => {
                                     <h2 style={{color:'black'}}>Chic 1BHK Apartment in Business Bay – DAMAC | Sleeps 4</h2>
                                     </div>
                                   
-                                </div> */}
-                                {/* <div className="flex items-center  gap-6">
+                                </div>
+                                <div className="flex items-center  gap-6">
                                     <div className="heading7">
                                     <h2 style={{color:'black'}}>4 Guests 
                                         <span
@@ -498,7 +507,7 @@ const Merano = () => {
                             </div>
                             </div>
 
-<div className="content-detail ">
+<div className="content-detail   pt-2">
                     <div className="container">
                         <div className="flex max-lg:flex-col-reverse gap-y-10 justify-between">
                             <div className="content xl:w-3/3 lg:w-[100%] lg:pr-[15px] w-full">
@@ -506,10 +515,14 @@ const Merano = () => {
                                 <div className="flex items-center  gap-6 pb-4">
                                     <div className="heading6">
                                     <div className="heading6">Description</div>
-                                    <div className="body2 text-variant mt-3" >Experience modern luxury in the heart of Dubai with our chic and spacious 1-bedroom apartment in Business Bay. Designed for both leisure and business travelers, this fully furnished home comfortably accommodates up to 4 guests with a plush bedroom and additional sofa beds in the living area.</div>
-                                    <div className="body2 text-variant mt-3" >Whether you&apos;re in town for a few days or planning an extended stay, you&apos;ll love the two stylish washrooms, a fully equipped kitchen for home-cooked meals, and two private balconies with stunning city views—perfect for morning coffee or unwinding at sunset.</div>
-                                    <div className="body2 text-variant mt-3" >Located just minutes from Downtown Dubai with easy access to the metro, enjoy seamless connectivity to the city&apos;s top attractions. After a day out, return to a cozy and elegant living space, complete with modern amenities and thoughtful touches to make your stay unforgettable.
+                                    <div className="body2 text-variant mt-3" >Escape to this charming farmhouse retreat, complete with a private pool and sprawling outdoor space. Perfect for families, friends, or couples seeking a serene getaway, this property combines rustic charm with modern comforts. Lounge by the pool under the sun, enjoy BBQs in the garden, or unwind in the cozy interiors thoughtfully designed for relaxation.
 </div>
+                                    <div className="body2 text-variant mt-3" >The farmhouse features spacious bedrooms with comfortable bedding, a fully equipped kitchen, and inviting living areas ideal for quality time and entertaining. Surrounded by lush greenery, this retreat offers peace, privacy, and a refreshing connection with nature, while still being conveniently accessible from the city.
+</div>
+                                    <div className="body2 text-variant mt-3" >Whether you’re planning a weekend escape, a family gathering, or just some time away from the hustle, this farmhouse with a pool promises a rejuvenating and memorable stay. Book now and indulge in the perfect blend of comfort, luxury, and nature
+
+</div>
+                                    
                                     </div>
                                   
                                 </div>
@@ -539,13 +552,13 @@ const Merano = () => {
   {/* Kitchen */}
   <div className="flex items-center gap-3">
     <span className="fi fi-rr-restaurant text-[24px] text-[#32548e]"></span>
-    <div className="body2">Fully equipped kitchen & kitchenette</div>
+    <div className="body2">kitchen </div>
   </div>
 
   {/* Pool */}
   <div className="flex items-center gap-3">
     <span className="fi fi-rr-swimmer text-[24px] text-[#32548e]"></span>
-    <div className="body2">Swimming pool & beach access</div>
+    <div className="body2">Swimming pool </div>
   </div>
 
   {/* Wifi */}
@@ -569,27 +582,32 @@ const Merano = () => {
   {/* AC */}
   <div className="flex items-center gap-3">
     <i className="fi fi-rr-air-conditioner text-[24px] text-[#32548e]"></i>
-    <div className="body2">Air conditioning</div>
+    <div className="body2">AC</div>
   </div>
 
   {/* First Aid */}
-  <div className="flex items-center gap-3">
+  {/* <div className="flex items-center gap-3">
     <i className="fi fi-rr-doctor text-[24px] text-[#32548e]"></i>
     <div className="body2">First aid kit</div>
-  </div>
-  <div className="flex items-center gap-3">
+  </div> */}
+  {/* <div className="flex items-center gap-3">
     <i className="fi fi-rr-house-laptop text-[24px] text-[#32548e]"></i>
     <div className="body2">Dedicated workspace</div>
-  </div>
+  </div> */}
   <div className="flex items-center gap-3">
       <i className="fi fi-rr-chart-area text-[24px] text-[#32548e]"></i>
-    <div className="body2">Outdoor playing areas</div>
+    <div className="body2">Washing Machine
+</div>
   </div>
   <div className="flex items-center gap-3">
+    <span className="fi fi-rr-restaurant text-[24px] text-[#32548e]"></span>
+    <div className="body2">BBQ grill  </div>
+  </div>
+  {/* <div className="flex items-center gap-3">
       <i className="fi fi-rr-database text-[24px] text-[#32548e]"></i>
     <div className="body2">Iron & clothes storage
 </div>
-  </div>
+  </div> */}
 </div>
 
                                 
@@ -607,7 +625,7 @@ const Merano = () => {
                                         <div className="heading5">Guest reviews</div>
                                     </div>
                                   <div className="list-review lg:pt-4 pt-2">
-  {testimonialData.slice(0, 2).map((item, index) => (
+  {testimonialData.slice(8,10).map((item, index) => (
    <div key={index} className="item flex flex-col sm:flex-row gap-5 md:mt-6 mt-4 w-full">
    <div className="review pb-6 border-b border-outline w-full">
      <div className="flex items-center gap-2">
@@ -637,7 +655,7 @@ const Merano = () => {
 
                             </div>
 
-                            <DemoBook/>
+                            <FarmhouseWithPoolBook/>
                             
                         </div>
 
@@ -668,4 +686,4 @@ const Merano = () => {
         </>
     )
 }
-export default Merano
+export default FramhouseWithPool

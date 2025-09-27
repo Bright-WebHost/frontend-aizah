@@ -25,7 +25,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import Rate from '@/components/Other/Rate'
 import StickyBox from 'react-sticky-box';
 import HeaderThree from '@/components/Header/HeaderThree'
-import DemoBook from '@/components/DemoBook/DemoBook'
+import PenthouseParisianBook from '@/components/PenthouseParisianBook/PenthouseParisianBook'
 
 interface GuestType {
     adult: number;
@@ -34,7 +34,7 @@ interface GuestType {
     pet: number;
 }
 
-const Merano = () => {
+const PenthouseParisian = () => {
     const params = useSearchParams()
     let tentId = params.get('id')
     const [viewMoreDesc, setViewMoreDesc] = useState<boolean>(false)
@@ -173,12 +173,25 @@ const Merano = () => {
     const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
     const images = [
-      { src: "/images/allimg/rooms/Merano/5.png", alt: "Image 1" },
-      { src: "/images/allimg/rooms/Merano/2.png", alt: "Image 2" },
-      { src: "/images/allimg/rooms/Merano/3.png", alt: "Image 3" },
-      { src: "/images/allimg/rooms/Merano/4.png", alt: "Image 4" },
-      { src: "/images/allimg/rooms/Merano/1.png", alt: "Image 5" },
-      { src: "/images/allimg/rooms/Merano/6.png", alt: "Image 5" },
+      { src: "/images/allimg/rooms/PenthouseParisian/3.webp", alt: "Image 1" },
+      { src: "/images/allimg/rooms/PenthouseParisian/14.webp", alt: "Image 2" },
+      { src: "/images/allimg/rooms/PenthouseParisian/9.webp", alt: "Image 3" },
+      { src: "/images/allimg/rooms/PenthouseParisian/4.webp", alt: "Image 4" },
+      { src: "/images/allimg/rooms/PenthouseParisian/13.webp", alt: "Image 5" },
+      { src: "/images/allimg/rooms/PenthouseParisian/1.webp", alt: "Image 6" },
+      
+
+       { src: "/images/allimg/rooms/PenthouseParisian/2.webp", alt: "Image 7" },
+      //  { src: "/images/allimg/rooms/PenthouseParisian/12.webp", alt: "Image 7" },
+       { src: "/images/allimg/rooms/PenthouseParisian/5.webp", alt: "Image 8" },
+       { src: "/images/allimg/rooms/PenthouseParisian/6.webp", alt: "Image 9" },
+       { src: "/images/allimg/rooms/PenthouseParisian/7.webp", alt: "Image 10" },
+       { src: "/images/allimg/rooms/PenthouseParisian/8.webp", alt: "Image 11" },
+       { src: "/images/allimg/rooms/PenthouseParisian/10.webp", alt: "Image 12" },
+       { src: "/images/allimg/rooms/PenthouseParisian/15.webp", alt: "Image 13" },
+       { src: "/images/allimg/rooms/PenthouseParisian/11.webp", alt: "Image 14" },
+      //  { src: "/images/allimg/rooms/PenthouseParisian/12.webp", alt: "Image 15" }
+
     ];
   
     const handlePrev = () => {
@@ -209,13 +222,13 @@ const Merano = () => {
 
                                 <div className="flex items-center  gap-6">
                                     <div className="heading5">
-                                    <h2 style={{color:'black'}}>Chic 1BHK Apartment in Business Bay – DAMAC | Sleeps 4</h2>
+                                    <h2 style={{color:'black'}}>Penthouse Parisian </h2>
                                     </div>
                                   
                                 </div>
                                 <div className="flex items-center  gap-6">
                                     <div className="heading7">
-                                    <h2 style={{color:'black'}}>4 Guests 
+                                    <h2 style={{color:'black'}}>8 Guests 
                                         <span
                                          style={{
                                          fontSize: '14px',
@@ -225,7 +238,7 @@ const Merano = () => {
                                          }}
                                          aria-hidden="true">
                                          ·
-                                         </span>1 Bedroom<span
+                                         </span>3  Bedrooms<span
                                          style={{
                                          fontSize: '14px',
                                          marginLeft: '4px',
@@ -234,7 +247,7 @@ const Merano = () => {
                                          }}
                                          aria-hidden="true">
                                          ·
-                                         </span>1 Bed
+                                         </span>3 Beds
                                          <span
                                          style={{
                                          fontSize: '14px',
@@ -244,7 +257,7 @@ const Merano = () => {
                                          }}
                                          aria-hidden="true">
                                          ·
-                                         </span>  2 Bathrooms</h2>
+                                         </span>  3 Bathrooms</h2>
                                     </div>
                                   
                                 </div>
@@ -456,8 +469,8 @@ const Merano = () => {
                                     <h2 style={{color:'black'}}>Chic 1BHK Apartment in Business Bay – DAMAC | Sleeps 4</h2>
                                     </div>
                                   
-                                </div> */}
-                                {/* <div className="flex items-center  gap-6">
+                                </div>
+                                <div className="flex items-center  gap-6">
                                     <div className="heading7">
                                     <h2 style={{color:'black'}}>4 Guests 
                                         <span
@@ -498,7 +511,7 @@ const Merano = () => {
                             </div>
                             </div>
 
-<div className="content-detail ">
+<div className="content-detail   pt-2">
                     <div className="container">
                         <div className="flex max-lg:flex-col-reverse gap-y-10 justify-between">
                             <div className="content xl:w-3/3 lg:w-[100%] lg:pr-[15px] w-full">
@@ -506,10 +519,12 @@ const Merano = () => {
                                 <div className="flex items-center  gap-6 pb-4">
                                     <div className="heading6">
                                     <div className="heading6">Description</div>
-                                    <div className="body2 text-variant mt-3" >Experience modern luxury in the heart of Dubai with our chic and spacious 1-bedroom apartment in Business Bay. Designed for both leisure and business travelers, this fully furnished home comfortably accommodates up to 4 guests with a plush bedroom and additional sofa beds in the living area.</div>
-                                    <div className="body2 text-variant mt-3" >Whether you&apos;re in town for a few days or planning an extended stay, you&apos;ll love the two stylish washrooms, a fully equipped kitchen for home-cooked meals, and two private balconies with stunning city views—perfect for morning coffee or unwinding at sunset.</div>
-                                    <div className="body2 text-variant mt-3" >Located just minutes from Downtown Dubai with easy access to the metro, enjoy seamless connectivity to the city&apos;s top attractions. After a day out, return to a cozy and elegant living space, complete with modern amenities and thoughtful touches to make your stay unforgettable.
+                                    <div className="body2 text-variant mt-3" >Experience timeless elegance in this exquisite Parisian-style 3BHK penthouse located in the heart of Bhartiya City. Designed to blend classic charm with modern luxury, this lavish penthouse offers breathtaking skyline views that you can enjoy from every corner of your home. Step onto the spacious balcony or rooftop terrace to soak in panoramic cityscapes, perfect for morning coffees, evening sunsets, or starlit gatherings.</div>
+                                    <div className="body2 text-variant mt-3" >Inside, the penthouse features three beautifully appointed bedrooms with plush furnishings, soft linens, and serene décor, ensuring restful nights and ultimate comfort. The bright and airy living spaces are ideal for relaxing, entertaining, or hosting friends and family. The modern kitchen is fully equipped with high-quality appliances, allowing you to prepare meals with ease, while the dining area provides an elegant setting for shared meals and memorable moments.</div>
+                                    <div className="body2 text-variant mt-3" >Residents enjoy access to premium amenities, including a rooftop infinity pool, a state-of-the-art gym, a clubhouse, and landscaped gardens, creating a vibrant yet tranquil living environment. With 24/7 security, convenience, and privacy, this penthouse ensures peace of mind. Situated amidst fine dining, upscale shopping, and entertainment hubs, this Parisian-themed penthouse offers the perfect combination of sophistication, luxury, and city convenience. Whether for leisure, work, or lifestyle, this home promises an unparalleled experience where elegance meets comfort.
+
 </div>
+                                    
                                     </div>
                                   
                                 </div>
@@ -539,14 +554,14 @@ const Merano = () => {
   {/* Kitchen */}
   <div className="flex items-center gap-3">
     <span className="fi fi-rr-restaurant text-[24px] text-[#32548e]"></span>
-    <div className="body2">Fully equipped kitchen & kitchenette</div>
+    <div className="body2">kitchen </div>
   </div>
 
   {/* Pool */}
-  <div className="flex items-center gap-3">
+  {/* <div className="flex items-center gap-3">
     <span className="fi fi-rr-swimmer text-[24px] text-[#32548e]"></span>
     <div className="body2">Swimming pool & beach access</div>
-  </div>
+  </div> */}
 
   {/* Wifi */}
   <div className="flex items-center gap-3">
@@ -569,27 +584,32 @@ const Merano = () => {
   {/* AC */}
   <div className="flex items-center gap-3">
     <i className="fi fi-rr-air-conditioner text-[24px] text-[#32548e]"></i>
-    <div className="body2">Air conditioning</div>
+    <div className="body2">AC</div>
   </div>
 
   {/* First Aid */}
-  <div className="flex items-center gap-3">
+  {/* <div className="flex items-center gap-3">
     <i className="fi fi-rr-doctor text-[24px] text-[#32548e]"></i>
     <div className="body2">First aid kit</div>
-  </div>
-  <div className="flex items-center gap-3">
+  </div> */}
+  {/* <div className="flex items-center gap-3">
     <i className="fi fi-rr-house-laptop text-[24px] text-[#32548e]"></i>
     <div className="body2">Dedicated workspace</div>
-  </div>
+  </div> */}
   <div className="flex items-center gap-3">
       <i className="fi fi-rr-chart-area text-[24px] text-[#32548e]"></i>
-    <div className="body2">Outdoor playing areas</div>
+    <div className="body2">Washing Machine
+</div>
   </div>
   <div className="flex items-center gap-3">
+    <span className="fi fi-rr-water text-[24px] text-[#32548e]"></span>
+    <div className="body2">Hot water </div>
+  </div>
+  {/* <div className="flex items-center gap-3">
       <i className="fi fi-rr-database text-[24px] text-[#32548e]"></i>
     <div className="body2">Iron & clothes storage
 </div>
-  </div>
+  </div> */}
 </div>
 
                                 
@@ -607,7 +627,7 @@ const Merano = () => {
                                         <div className="heading5">Guest reviews</div>
                                     </div>
                                   <div className="list-review lg:pt-4 pt-2">
-  {testimonialData.slice(0, 2).map((item, index) => (
+  {testimonialData.slice(10,12).map((item, index) => (
    <div key={index} className="item flex flex-col sm:flex-row gap-5 md:mt-6 mt-4 w-full">
    <div className="review pb-6 border-b border-outline w-full">
      <div className="flex items-center gap-2">
@@ -637,7 +657,7 @@ const Merano = () => {
 
                             </div>
 
-                            <DemoBook/>
+                            <PenthouseParisianBook/>
                             
                         </div>
 
@@ -668,4 +688,4 @@ const Merano = () => {
         </>
     )
 }
-export default Merano
+export default PenthouseParisian

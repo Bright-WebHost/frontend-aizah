@@ -230,7 +230,15 @@ const HeaderTwo = () => {
                                     href="/room"
                                     className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 text-white ${pathname === '/room' ? 'active' : ''}`}
                                 >
-                                   Rooms
+                                   Dubai  Properties
+                                </Link>
+                            </li>
+                            <li className='h-full relative'>
+                                <Link
+                                    href="/indianProperty"
+                                    className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 text-white ${pathname === '/room' ? 'active' : ''}`}
+                                >
+                                   Indian  Properties
                                 </Link>
                             </li>
 

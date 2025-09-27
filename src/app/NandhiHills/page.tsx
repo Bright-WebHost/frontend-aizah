@@ -25,7 +25,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import Rate from '@/components/Other/Rate'
 import StickyBox from 'react-sticky-box';
 import HeaderThree from '@/components/Header/HeaderThree'
-import DemoBook from '@/components/DemoBook/DemoBook'
+import NandhiHillsBook from '@/components/NandhiHillsBook/NandhiHillsBook'
 
 interface GuestType {
     adult: number;
@@ -34,7 +34,7 @@ interface GuestType {
     pet: number;
 }
 
-const Merano = () => {
+const NandhiHills = () => {
     const params = useSearchParams()
     let tentId = params.get('id')
     const [viewMoreDesc, setViewMoreDesc] = useState<boolean>(false)
@@ -173,12 +173,25 @@ const Merano = () => {
     const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
     const images = [
-      { src: "/images/allimg/rooms/Merano/5.png", alt: "Image 1" },
-      { src: "/images/allimg/rooms/Merano/2.png", alt: "Image 2" },
-      { src: "/images/allimg/rooms/Merano/3.png", alt: "Image 3" },
-      { src: "/images/allimg/rooms/Merano/4.png", alt: "Image 4" },
-      { src: "/images/allimg/rooms/Merano/1.png", alt: "Image 5" },
-      { src: "/images/allimg/rooms/Merano/6.png", alt: "Image 5" },
+      { src: "/images/allimg/rooms/Nandhi/10.webp", alt: "Image 1" },
+      { src: "/images/allimg/rooms/Nandhi/14.webp", alt: "Image 2" },
+      { src: "/images/allimg/rooms/Nandhi/3.webp", alt: "Image 3" },
+      { src: "/images/allimg/rooms/Nandhi/4.webp", alt: "Image 4" },
+      { src: "/images/allimg/rooms/Nandhi/1.webp", alt: "Image 5" },
+      { src: "/images/allimg/rooms/Nandhi/13.webp", alt: "Image 6" },
+      
+
+       { src: "/images/allimg/rooms/Nandhi/2.webp", alt: "Image 7" },
+       { src: "/images/allimg/rooms/Nandhi/5.webp", alt: "Image 8" },
+       { src: "/images/allimg/rooms/Nandhi/6.webp", alt: "Image 9" },
+       { src: "/images/allimg/rooms/Nandhi/7.webp", alt: "Image 10" },
+       { src: "/images/allimg/rooms/Nandhi/8.webp", alt: "Image 11" },
+       { src: "/images/allimg/rooms/Nandhi/9.webp", alt: "Image 12" },
+       { src: "/images/allimg/rooms/Nandhi/15.webp", alt: "Image 13" },
+       { src: "/images/allimg/rooms/Nandhi/11.webp", alt: "Image 14" },
+      //  { src: "/images/allimg/rooms/Nandhi/12.webp", alt: "Image 14" },
+      //  { src: "/images/allimg/rooms/Nandhi/16.webp", alt: "Image 14" }
+
     ];
   
     const handlePrev = () => {
@@ -209,13 +222,13 @@ const Merano = () => {
 
                                 <div className="flex items-center  gap-6">
                                     <div className="heading5">
-                                    <h2 style={{color:'black'}}>Chic 1BHK Apartment in Business Bay – DAMAC | Sleeps 4</h2>
+                                    <h2 style={{color:'black'}}>Farmhouse Nandhi Hills </h2>
                                     </div>
                                   
                                 </div>
                                 <div className="flex items-center  gap-6">
                                     <div className="heading7">
-                                    <h2 style={{color:'black'}}>4 Guests 
+                                    <h2 style={{color:'black'}}>6 Guests 
                                         <span
                                          style={{
                                          fontSize: '14px',
@@ -225,7 +238,7 @@ const Merano = () => {
                                          }}
                                          aria-hidden="true">
                                          ·
-                                         </span>1 Bedroom<span
+                                         </span>2  Bedrooms<span
                                          style={{
                                          fontSize: '14px',
                                          marginLeft: '4px',
@@ -234,7 +247,7 @@ const Merano = () => {
                                          }}
                                          aria-hidden="true">
                                          ·
-                                         </span>1 Bed
+                                         </span>2 Beds
                                          <span
                                          style={{
                                          fontSize: '14px',
@@ -456,8 +469,8 @@ const Merano = () => {
                                     <h2 style={{color:'black'}}>Chic 1BHK Apartment in Business Bay – DAMAC | Sleeps 4</h2>
                                     </div>
                                   
-                                </div> */}
-                                {/* <div className="flex items-center  gap-6">
+                                </div>
+                                <div className="flex items-center  gap-6">
                                     <div className="heading7">
                                     <h2 style={{color:'black'}}>4 Guests 
                                         <span
@@ -498,7 +511,7 @@ const Merano = () => {
                             </div>
                             </div>
 
-<div className="content-detail ">
+<div className="content-detail   pt-2">
                     <div className="container">
                         <div className="flex max-lg:flex-col-reverse gap-y-10 justify-between">
                             <div className="content xl:w-3/3 lg:w-[100%] lg:pr-[15px] w-full">
@@ -506,9 +519,13 @@ const Merano = () => {
                                 <div className="flex items-center  gap-6 pb-4">
                                     <div className="heading6">
                                     <div className="heading6">Description</div>
-                                    <div className="body2 text-variant mt-3" >Experience modern luxury in the heart of Dubai with our chic and spacious 1-bedroom apartment in Business Bay. Designed for both leisure and business travelers, this fully furnished home comfortably accommodates up to 4 guests with a plush bedroom and additional sofa beds in the living area.</div>
-                                    <div className="body2 text-variant mt-3" >Whether you&apos;re in town for a few days or planning an extended stay, you&apos;ll love the two stylish washrooms, a fully equipped kitchen for home-cooked meals, and two private balconies with stunning city views—perfect for morning coffee or unwinding at sunset.</div>
-                                    <div className="body2 text-variant mt-3" >Located just minutes from Downtown Dubai with easy access to the metro, enjoy seamless connectivity to the city&apos;s top attractions. After a day out, return to a cozy and elegant living space, complete with modern amenities and thoughtful touches to make your stay unforgettable.
+                                    <div className="body2 text-variant mt-3" >Escape to this serene 2BHK haven, just minutes away from the breathtaking Nandi Hills. Spanning 3,500 sq. ft., this thoughtfully designed retreat combines luxurious furnishings with a peaceful ambiance, offering the perfect escape from the hustle and bustle of city life. Ideal for families, friends, or couples seeking a nature-filled getaway, the apartment provides comfort, style, and convenience in every corner.</div>
+                                    <div className="body2 text-variant mt-3" >Wake up to fresh mountain air, enjoy a scenic morning drive, or simply relax on the balcony while soaking in the panoramic views. The interiors are cozy and well-equipped, featuring modern amenities, plush beds, and a fully functional kitchen for all your culinary needs. Step outside to the private outdoor BBQ grill, perfect for starry nights, memorable meals, and evenings filled with laughter.</div>
+                                    <div className="body2 text-variant mt-3" >For your peace of mind, the property includes secure entry, uninterrupted power backup, and all essential facilities to make your stay seamless and comfortable. Whether you’re looking to unwind amidst nature, explore nearby attractions, or spend quality time with loved ones, this 2BHK retreat near Nandi Hills promises a rejuvenating and unforgettable experience.
+
+</div>
+                                    <div className="body2 text-variant mt-3" >Book now and immerse yourself in a tranquil getaway where nature, luxury, and comfort meet in perfect harmony
+
 </div>
                                     </div>
                                   
@@ -539,14 +556,14 @@ const Merano = () => {
   {/* Kitchen */}
   <div className="flex items-center gap-3">
     <span className="fi fi-rr-restaurant text-[24px] text-[#32548e]"></span>
-    <div className="body2">Fully equipped kitchen & kitchenette</div>
+    <div className="body2">kitchen </div>
   </div>
 
   {/* Pool */}
-  <div className="flex items-center gap-3">
+  {/* <div className="flex items-center gap-3">
     <span className="fi fi-rr-swimmer text-[24px] text-[#32548e]"></span>
     <div className="body2">Swimming pool & beach access</div>
-  </div>
+  </div> */}
 
   {/* Wifi */}
   <div className="flex items-center gap-3">
@@ -569,27 +586,32 @@ const Merano = () => {
   {/* AC */}
   <div className="flex items-center gap-3">
     <i className="fi fi-rr-air-conditioner text-[24px] text-[#32548e]"></i>
-    <div className="body2">Air conditioning</div>
+    <div className="body2">AC</div>
   </div>
 
   {/* First Aid */}
-  <div className="flex items-center gap-3">
+  {/* <div className="flex items-center gap-3">
     <i className="fi fi-rr-doctor text-[24px] text-[#32548e]"></i>
     <div className="body2">First aid kit</div>
-  </div>
-  <div className="flex items-center gap-3">
+  </div> */}
+  {/* <div className="flex items-center gap-3">
     <i className="fi fi-rr-house-laptop text-[24px] text-[#32548e]"></i>
     <div className="body2">Dedicated workspace</div>
-  </div>
+  </div> */}
   <div className="flex items-center gap-3">
       <i className="fi fi-rr-chart-area text-[24px] text-[#32548e]"></i>
-    <div className="body2">Outdoor playing areas</div>
+    <div className="body2">Washing Machine
+</div>
   </div>
   <div className="flex items-center gap-3">
+    <span className="fi fi-rr-restaurant text-[24px] text-[#32548e]"></span>
+    <div className="body2">BBQ grill  </div>
+  </div>
+  {/* <div className="flex items-center gap-3">
       <i className="fi fi-rr-database text-[24px] text-[#32548e]"></i>
     <div className="body2">Iron & clothes storage
 </div>
-  </div>
+  </div> */}
 </div>
 
                                 
@@ -607,7 +629,7 @@ const Merano = () => {
                                         <div className="heading5">Guest reviews</div>
                                     </div>
                                   <div className="list-review lg:pt-4 pt-2">
-  {testimonialData.slice(0, 2).map((item, index) => (
+  {testimonialData.slice(8,10).map((item, index) => (
    <div key={index} className="item flex flex-col sm:flex-row gap-5 md:mt-6 mt-4 w-full">
    <div className="review pb-6 border-b border-outline w-full">
      <div className="flex items-center gap-2">
@@ -637,7 +659,7 @@ const Merano = () => {
 
                             </div>
 
-                            <DemoBook/>
+                            <NandhiHillsBook/>
                             
                         </div>
 
@@ -668,4 +690,4 @@ const Merano = () => {
         </>
     )
 }
-export default Merano
+export default NandhiHills

@@ -135,5 +135,64 @@
             "/images/tent/900x900.png"
         ],
         "star": 5
+    },
+
+
+
+     {
+        "id": "9",
+      "name": "Varishta",
+        "position": "Ethical Hacker",
+        "avatar": "/images/avatar/60x60.png",
+        "date": "4 days ago",
+        "address": "Tokyo, Japan",
+        "description": "The place was clean and nice to have a cozy party.. But the only challenge is the door lock isn’t sturdy.. Apart from that the place is nice.",
+        "images": [
+            "/images/tent/900x900.png",
+            "/images/tent/900x900.png"
+        ],
+        "star": 5
+    },
+     {
+        "id": "10",
+      "name": "Arpit",
+        "position": "Ethical Hacker",
+        "avatar": "/images/avatar/60x60.png",
+        "date": "4 days ago",
+        "address": "Tokyo, Japan",
+        "description": "Nice super clean and pretty place to chill out. Host was quite responsive. I felt the place was a little too pricy for what is provided. We had a few hassles with checkin but the host was responsive and fast to get them sorted. Seemingly, it’s not rightly priced for 6 people, either the place should have been bigger, or with something else to do (like a pool) could justify the price for six people.",
+        "images": [
+            "/images/tent/900x900.png",
+            "/images/tent/900x900.png"
+        ],
+        "star": 5
+    },
+     {
+        "id": "11",
+      "name": "Durgesh",
+        "position": "Ethical Hacker",
+        "avatar": "/images/avatar/60x60.png",
+        "date": "4 days ago",
+        "address": "Tokyo, Japan",
+        "description": "Lovely stay! The place was clean, stylish, and in a great location. The host was responsive and helpful. Would definitely stay here again!",
+        "images": [
+            "/images/tent/900x900.png",
+            "/images/tent/900x900.png"
+        ],
+        "star": 5
+    },
+     {
+        "id": "12",
+      "name": "Abhishek",
+        "position": "Ethical Hacker",
+        "avatar": "/images/avatar/60x60.png",
+        "date": "4 days ago",
+        "address": "Tokyo, Japan",
+        "description": "The stay was nice and perfectly matched with the description and photos. The host was very responsive and helpful making the checkin process easier",
+        "images": [
+            "/images/tent/900x900.png",
+            "/images/tent/900x900.png"
+        ],
+        "star": 5
     }
 ]

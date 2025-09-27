@@ -59,7 +59,7 @@ interface BookingResponse {
     roomname?: string;
 }
 
-const RevaBook = () => {
+const FarmhouseWithPoolBook = () => {
     const router = useRouter();
     const params = useSearchParams();
     let tentId = params.get('id');
@@ -89,8 +89,7 @@ const RevaBook = () => {
     useEffect(() => {
         const fetchPriceData = async () => {
             try {
-                
-                const response = await fetch(`https://api.aizahhospitality.com/api/priceView/68c910e3b6f72a0a8a5b9bea`);
+                const response = await fetch(`https://api.aizahhospitality.com/api/priceView/68d7bcc57d587ef507226634`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch price data');
                 }
@@ -113,7 +112,7 @@ const RevaBook = () => {
     // Fetch booked dates from backend and filter for "merano" room only
     const fetchBookedDates = useCallback(async () => {
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/chekoutview`);
+            const response = await fetch(`https://api.aizahhospitality.com/api/chekoutview`);
             if (!response.ok) {
                 throw new Error('Failed to fetch booked dates');
             }
@@ -121,7 +120,7 @@ const RevaBook = () => {
             if (data.data && Array.isArray(data.data)) {
                 // Filter bookings for "merano" room only
                 const meranoBookings = data.data.filter((booking: BookingResponse) => 
-                    booking.roomname === "Reva-1811"
+                    booking.roomname === " Farmhouse with Pool"
                 );
                 
                 const formattedDates = meranoBookings.map((booking: BookingResponse) => ({
@@ -353,13 +352,13 @@ const RevaBook = () => {
         const children = guest.children;
         const price = nightlyRate;
         const totalPrice = totalBeforeTaxes;
-        const roomname = "Reva-1811";
+        const roomname = "Nandhi Hills";
       
         try {
             await fetchBookedDates();
             
             router.push(
-                `/checkout?roomname=${roomname}&startDate=${startDate}&endDate=${endDateStr}&guests=${guests}&children=${children}&price=${price}&totalPrice=${totalPrice}`
+                `/IndianPropertyCheckout?roomname=${roomname}&startDate=${startDate}&endDate=${endDateStr}&guests=${guests}&children=${children}&price=${price}&totalPrice=${totalPrice}`
             );
         } catch (error) {
             console.error('Booking error:', error);
@@ -536,4 +535,4 @@ const RevaBook = () => {
     );
 };
 
-export default RevaBook;
+export default FarmhouseWithPoolBook;
