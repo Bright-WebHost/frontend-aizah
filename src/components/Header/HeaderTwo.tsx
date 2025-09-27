@@ -236,7 +236,7 @@ const HeaderTwo = () => {
                             <li className='h-full relative'>
                                 <Link
                                     href="/indianProperty"
-                                    className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 text-white ${pathname === '/room' ? 'active' : ''}`}
+                                    className={`text-button1 duration-300 h-full flex items-center justify-center gap-1 text-white ${pathname === '/indianProperty' ? 'active' : ''}`}
                                 >
                                    Indian  Properties
                                 </Link>
@@ -546,20 +546,26 @@ const HeaderTwo = () => {
                                             <div className="list-nav-item w-full pt-2 pb-6 ">
                                                 <ul className='w-full ml-[30px] mt'>
                                                     <li>
-                                                        <Link href="/" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line text-xl leading-10 ${pathname === '/pages/contact' ? 'active' : ''}`}>
+                                                        <Link href="/" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line text-xl leading-10 ${pathname === '/' ? 'active' : ''}`}>
                                                             home
                                                         </Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/about" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line  text-xl leading-10${pathname === '/pages/contact' ? 'active' : ''}`}>
+                                                        <Link href="/about" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line  text-xl leading-10${pathname === '/about' ? 'active' : ''}`}>
                                                           About us
                                                         </Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/room" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line text-xl leading-10 ${pathname === '/pages/contact' ? 'active' : ''}`}>
-                                                           Room
+                                                        <Link href="/room" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line text-xl leading-10 ${pathname === '/room' ? 'active' : ''}`}>
+                                                       Dubai  Properties
                                                         </Link>
                                                     </li>
+                                                    <li>
+                                                        <Link href="/indianProperty" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line text-xl leading-10 ${pathname === '/indianProperty' ? 'active' : ''}`}>
+                                                       Indian  Properties
+                                                        </Link>
+                                                    </li>
+                                                    
                                                     <li>
                                                         <Link href="/pages/contact" className={`nav-item-mobile text-button link text-variant1 duration-300 has-line text-xl   leading-10  ${pathname === '/pages/contact' ? 'active' : ''}`}>
                                                         Contact

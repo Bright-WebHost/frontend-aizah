@@ -223,7 +223,7 @@ const NandhiHillsBook = () => {
                 }}>
                     {day.getDate()}
                 </div>
-                 <div style={{ fontSize: '8px' ,color:'red'}}>  {price} AED</div>
+                 <div style={{ fontSize: '8px' ,color:'red'}}>  ₹ {price} </div>
             </div>
         );
     };

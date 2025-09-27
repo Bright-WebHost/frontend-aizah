@@ -100,11 +100,20 @@ const Footer = () => {
                                    
                                 </div>
                                 <div className="item">
-                                    <div className="text-title pb-3 text-[#f1dd38]">Rooms</div>
+                                    <div className="text-title pb-3 text-[#f1dd38]">Dubai Properties</div>
                                     <Link href={'/merano'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Damac - Chic 1BHK Apartment </Link>
                                     <Link href={'/majestine'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Elegant Stay Near Dubai Mall</Link>
                                     <Link href={'/reva'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Boho-Chic Living in Business Bay</Link>
                                     <Link href={'/merano-2906'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Skyline Views | Urban Oasis</Link>
+                                    {/* <Link href={'/#'} className="caption1 text-black  has-line block w-fit whitespace-nowrap">Room</Link> */}
+                                  
+                                </div>
+                                <div className="item">
+                                    <div className="text-title pb-3 text-[#f1dd38]">Indian Properties</div>
+                                    <Link href={'/NandhiHills'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Farmhouse Nandhi Hills</Link>
+                                    <Link href={'/PenthouseParisian'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Penthouse Parisian</Link>
+                                    <Link href={'/FramhouseWithPool'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Farmhouse with Pool</Link>
+                                    {/* <Link href={'/merano-2906'} className="caption1 text-white  has-line block w-fit whitespace-nowrap">Skyline Views | Urban Oasis</Link> */}
                                     {/* <Link href={'/#'} className="caption1 text-black  has-line block w-fit whitespace-nowrap">Room</Link> */}
                                   
                                 </div>
